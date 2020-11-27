@@ -1,0 +1,29 @@
+article 11pt,
+tikz 
+tcolorbox breakable
+parskip 
+iftex 
+fontenc T1
+mathpazo 
+fontspec 
+graphicx 
+caption 
+adjustbox Export
+float 
+xcolor 
+enumerate 
+geometry 
+amsmath 
+amssymb 
+textcomp 
+upquote 
+eurosym 
+ucs mathletters
+fancyvrb 
+hyperref 
+titling 
+longtable 
+booktabs 
+enumitem inline
+ulem normalem
+mathrsfs 

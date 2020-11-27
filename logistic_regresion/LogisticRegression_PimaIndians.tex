@@ -1,0 +1,1177 @@
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+
+    \usepackage{iftex}
+    \ifPDFTeX
+    	\usepackage[T1]{fontenc}
+    	\usepackage{mathpazo}
+    \else
+    	\usepackage{fontspec}
+    \fi
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+
+
+
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+
+
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{LogisticRegression\_PimaIndians}
+    \setcounter{secnumdepth}{0}
+
+
+
+
+
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb.
+    \makeatletter
+        \newbox\Wrappedcontinuationbox
+        \newbox\Wrappedvisiblespacebox
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
+        \newcommand*\Wrappedcontinuationindent {3ex }
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
+        % Take advantage of the already applied Pygments mark-up to insert
+        % potential linebreaks for TeX processing.
+        %        {, <, #, %, $, ' and ": go to next line.
+        %        _, }, ^, &, >, - and ~: stay at end of broken line.
+        % Use of \textquotesingle for straight quote.
+        \newcommand*\Wrappedbreaksatspecials {%
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
+        }
+        % Some characters . , ; ? ! / are not pygmentized.
+        % This macro makes them "active" and they will insert potential linebreaks
+        \newcommand*\Wrappedbreaksatpunct {%
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+            \catcode`\.\active
+            \catcode`\,\active
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active
+            \lccode`\~`\~
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        \ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}
+    }
+
+
+
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+
+
+
+\begin{document}
+
+    \maketitle
+
+
+
+
+    \hypertarget{coding-assignment-4}{%
+\section{Coding Assignment 4}\label{coding-assignment-4}}
+
+\begin{verbatim}
+Logistic Regression Program - Pima Indians dataset
+Author: Sreejith S
+\end{verbatim}
+
+Ref: https://www.kaggle.com/uciml/pima-indians-diabetes-database
+
+Ref: https://www.medicinenet.com/glucose\_tolerance\_test/article.htm
+
+Ref:
+https://towardsdatascience.com/understanding-confusion-matrix-a9ad42dcfd62
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{349}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Importing the libraries }
+\PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+\PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+\PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{load-dataset}{%
+\subsection{4.0. Load dataset}\label{load-dataset}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{350}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Importing the dataset}
+\PY{n}{dataset} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{/content/pima\PYZhy{}indians\PYZhy{}diabetes.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{dataset}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(768, 9)
+    \end{Verbatim}
+
+    \hypertarget{understanding-the-data}{%
+\subsection{4.1. Understanding the data}\label{understanding-the-data}}
+
+    \hypertarget{inspecting-dataset}{%
+\subsubsection{4.1.1. Inspecting Dataset}\label{inspecting-dataset}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{351}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{pd}\PY{o}{.}\PY{n}{set\PYZus{}option}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{display.max\PYZus{}columns}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}
+\PY{n}{pd}\PY{o}{.}\PY{n}{set\PYZus{}option}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{display.width}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{80}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{dataset}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{=}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{80}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{=}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{80}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{dataset}\PY{o}{.}\PY{n}{describe}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{=}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{80}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{=}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{80}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{dataset}\PY{o}{.}\PY{n}{info}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}dataset.plot(kind=\PYZsq{}scatter\PYZsq{}, subplots=True, layout=(3, 3), sharey=False)}
+\PY{c+c1}{\PYZsh{}plt.show()}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+   pregnant  plasma\_glucose  dia\_BP  skin\_thickness  serum\_insulin   bmi  \textbackslash{}
+0         6             148      72              35              0  33.6
+1         1              85      66              29              0  26.6
+2         8             183      64               0              0  23.3
+3         1              89      66              23             94  28.1
+4         0             137      40              35            168  43.1
+
+   diab\_pedigree  age  Diab
+0          0.627   50     1
+1          0.351   31     0
+2          0.672   32     1
+3          0.167   21     0
+4          2.288   33     1
+================================================================================
+================================================================================
+         pregnant  plasma\_glucose      dia\_BP  skin\_thickness  serum\_insulin  \textbackslash{}
+count  768.000000      768.000000  768.000000      768.000000     768.000000
+mean     3.845052      120.894531   69.105469       20.536458      79.799479
+std      3.369578       31.972618   19.355807       15.952218     115.244002
+min      0.000000        0.000000    0.000000        0.000000       0.000000
+25\%      1.000000       99.000000   62.000000        0.000000       0.000000
+50\%      3.000000      117.000000   72.000000       23.000000      30.500000
+75\%      6.000000      140.250000   80.000000       32.000000     127.250000
+max     17.000000      199.000000  122.000000       99.000000     846.000000
+
+              bmi  diab\_pedigree         age        Diab
+count  768.000000     768.000000  768.000000  768.000000
+mean    31.992578       0.471876   33.240885    0.348958
+std      7.884160       0.331329   11.760232    0.476951
+min      0.000000       0.078000   21.000000    0.000000
+25\%     27.300000       0.243750   24.000000    0.000000
+50\%     32.000000       0.372500   29.000000    0.000000
+75\%     36.600000       0.626250   41.000000    1.000000
+max     67.100000       2.420000   81.000000    1.000000
+================================================================================
+================================================================================
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 768 entries, 0 to 767
+Data columns (total 9 columns):
+ \#   Column          Non-Null Count  Dtype
+---  ------          --------------  -----
+ 0   pregnant        768 non-null    int64
+ 1   plasma\_glucose  768 non-null    int64
+ 2   dia\_BP          768 non-null    int64
+ 3   skin\_thickness  768 non-null    int64
+ 4   serum\_insulin   768 non-null    int64
+ 5   bmi             768 non-null    float64
+ 6   diab\_pedigree   768 non-null    float64
+ 7   age             768 non-null    int64
+ 8   Diab            768 non-null    int64
+dtypes: float64(2), int64(7)
+memory usage: 54.1 KB
+None
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{352}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}Creating info\PYZus{}dict for easier ploting}
+\PY{n}{info\PYZus{}dict} \PY{o}{=} \PY{p}{\PYZob{}}
+    \PY{l+m+mi}{0}\PY{p}{:}   \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pregnant}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZsh{} Pregnancies}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,}
+    \PY{l+m+mi}{1}\PY{p}{:}   \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{plasma\PYZus{}glucose}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Plasma glucose concentration 2 hrs OGTT (mg/dl)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,}
+    \PY{l+m+mi}{2}\PY{p}{:}   \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{dia\PYZus{}BP}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Diastolic Blood Pressure (mm Hg)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,}
+    \PY{l+m+mi}{3}\PY{p}{:}   \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{skin\PYZus{}thickness}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Triceps skin fold thickness (mm)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,}
+    \PY{l+m+mi}{4}\PY{p}{:}   \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{serum\PYZus{}insulin}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{2\PYZhy{}Hour serum insulin (mu U/ml)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,}
+    \PY{l+m+mi}{5}\PY{p}{:}   \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bmi}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{BMI (kg/m\PYZca{}2)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,}
+    \PY{l+m+mi}{6}\PY{p}{:}   \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{diab\PYZus{}pedigree}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Diabetes pedigree function}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,}
+    \PY{l+m+mi}{7}\PY{p}{:}   \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{age}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Age (years)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{selecting-class-labels-and-featureset}{%
+\subsubsection{4.1.2. Selecting class labels, and
+featureset}\label{selecting-class-labels-and-featureset}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{353}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{X} \PY{o}{=} \PY{n}{dataset}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Diab}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{X}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{y} \PY{o}{=} \PY{n}{dataset}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Diab}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{y}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+   pregnant  plasma\_glucose  dia\_BP  skin\_thickness  serum\_insulin   bmi  \textbackslash{}
+0         6             148      72              35              0  33.6
+1         1              85      66              29              0  26.6
+2         8             183      64               0              0  23.3
+3         1              89      66              23             94  28.1
+4         0             137      40              35            168  43.1
+
+   diab\_pedigree  age
+0          0.627   50
+1          0.351   31
+2          0.672   32
+3          0.167   21
+4          2.288   33
+
+0    1
+1    0
+2    1
+3    0
+4    1
+Name: Diab, dtype: int64
+    \end{Verbatim}
+
+    \hypertarget{plotting-the-dataset}{%
+\subsubsection{4.1.3. Plotting the dataset}\label{plotting-the-dataset}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{354}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{fig} \PY{o}{=}  \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,}\PY{l+m+mi}{18}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{:}
+  \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+  \PY{n}{ax}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{X}\PY{o}{.}\PY{n}{iloc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{n}{info\PYZus{}dict}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Diabates Risk}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{LogisticRegression_PimaIndians_files/LogisticRegression_PimaIndians_11_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+
+    \hypertarget{observations}{%
+\subsubsection{4.1.4. Observations}\label{observations}}
+
+\hypertarget{invalid-data-points}{%
+\paragraph{Invalid data points}\label{invalid-data-points}}
+
+It can be observed that several features have zero values when it is
+impossible to have zero values for them. \texttt{plasma\_glucose},
+\texttt{dia\_BP}, \texttt{BMI} etc are a few such features. Either these
+outliers can be removed from the dataset or can be replaced with mean
+values.
+
+\hypertarget{which-input-variable-do-you-think-is-better-in-predicting-if-someone-is-going-to-get-diabetes-in-the-next-5-year}{%
+\paragraph{Which input variable, do you think, is better in predicting
+if someone is going to get diabetes in the next 5
+year?}\label{which-input-variable-do-you-think-is-better-in-predicting-if-someone-is-going-to-get-diabetes-in-the-next-5-year}}
+
+It is hard from the plots in \texttt{4.1.3} alone to predict which input
+variable is better in predicting if someone is going to get diabetes in
+the next 5 years. On visual inspection, \texttt{BMI},
+\texttt{plasma\_glucose} seems to have some effect on the outcome.
+
+Comparing means of each feature between diabetic and non-diabetic might
+give some insights. But the means can be affected by the outliers. From
+the code cell below, it can be observed that diabetic patients have a
+higher \texttt{BMI=35} as compared to \texttt{BMI=30} for non-diabetics.
+
+Another option might be to see the correlation between features and
+Diab. Padas provide a method \texttt{corr()} for dataframes. This was
+tested in the cell below and \texttt{BMI}, \texttt{plasma\_glucose},
+\texttt{diab\_pedigree}, \texttt{serum\_insulin} \& even \texttt{age} to
+some extent was found to have an influence on diabetes.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{355}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{for} \PY{n}{feature} \PY{o+ow}{in} \PY{n}{X}\PY{p}{:}
+  \PY{n}{m1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{dataset}\PY{p}{[}\PY{n}{dataset}\PY{o}{.}\PY{n}{Diab} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{feature}\PY{p}{]}\PY{p}{)}
+  \PY{n}{m0} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{dataset}\PY{p}{[}\PY{n}{dataset}\PY{o}{.}\PY{n}{Diab} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{feature}\PY{p}{]}\PY{p}{)}
+  \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Avg value of }\PY{l+s+si}{\PYZob{}feature:\PYZlt{}16\PYZcb{}}\PY{l+s+s2}{ when, y = 1, is }\PY{l+s+si}{\PYZob{}m1\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+  \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Avg value of }\PY{l+s+si}{\PYZob{}feature:\PYZlt{}16\PYZcb{}}\PY{l+s+s2}{ when, y = 0, is }\PY{l+s+si}{\PYZob{}m0\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{dataset}\PY{o}{.}\PY{n}{corr}\PY{p}{(}\PY{n}{method}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pearson}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Avg value of pregnant         when, y = 1, is 4.865671641791045
+Avg value of pregnant         when, y = 0, is 3.298
+
+
+Avg value of plasma\_glucose   when, y = 1, is 141.25746268656715
+Avg value of plasma\_glucose   when, y = 0, is 109.98
+
+
+Avg value of dia\_BP           when, y = 1, is 70.82462686567165
+Avg value of dia\_BP           when, y = 0, is 68.184
+
+
+Avg value of skin\_thickness   when, y = 1, is 22.16417910447761
+Avg value of skin\_thickness   when, y = 0, is 19.664
+
+
+Avg value of serum\_insulin    when, y = 1, is 100.33582089552239
+Avg value of serum\_insulin    when, y = 0, is 68.792
+
+
+Avg value of bmi              when, y = 1, is 35.14253731343278
+Avg value of bmi              when, y = 0, is 30.30419999999996
+
+
+Avg value of diab\_pedigree    when, y = 1, is 0.5505
+Avg value of diab\_pedigree    when, y = 0, is 0.42973400000000017
+
+
+Avg value of age              when, y = 1, is 37.06716417910448
+Avg value of age              when, y = 0, is 31.19
+
+
+    \end{Verbatim}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{355}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+                pregnant  plasma\_glucose    dia\_BP  skin\_thickness  \textbackslash{}
+pregnant        1.000000        0.129459  0.141282       -0.081672
+plasma\_glucose  0.129459        1.000000  0.152590        0.057328
+dia\_BP          0.141282        0.152590  1.000000        0.207371
+skin\_thickness -0.081672        0.057328  0.207371        1.000000
+serum\_insulin  -0.073535        0.331357  0.088933        0.436783
+bmi             0.017683        0.221071  0.281805        0.392573
+diab\_pedigree  -0.033523        0.137337  0.041265        0.183928
+age             0.544341        0.263514  0.239528       -0.113970
+Diab            0.221898        0.466581  0.065068        0.074752
+
+                serum\_insulin       bmi  diab\_pedigree       age      Diab
+pregnant            -0.073535  0.017683      -0.033523  0.544341  0.221898
+plasma\_glucose       0.331357  0.221071       0.137337  0.263514  0.466581
+dia\_BP               0.088933  0.281805       0.041265  0.239528  0.065068
+skin\_thickness       0.436783  0.392573       0.183928 -0.113970  0.074752
+serum\_insulin        1.000000  0.197859       0.185071 -0.042163  0.130548
+bmi                  0.197859  1.000000       0.140647  0.036242  0.292695
+diab\_pedigree        0.185071  0.140647       1.000000  0.033561  0.173844
+age                 -0.042163  0.036242       0.033561  1.000000  0.238356
+Diab                 0.130548  0.292695       0.173844  0.238356  1.000000
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{clean-up-dataset}{%
+\subsubsection{4.1.5. Clean-up dataset}\label{clean-up-dataset}}
+
+Fixing zero values - On exploring the kaggle discussions on the dataset,
+it was found that the zero values are due to incomplete hospital
+records. We can compare effects on replacing these zero values.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{356}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{replace\PYZus{}zeros\PYZus{}with\PYZus{}mean} \PY{o}{=} \PY{k+kc}{False}
+\PY{k}{if} \PY{n}{replace\PYZus{}zeros\PYZus{}with\PYZus{}mean}\PY{p}{:}
+  \PY{c+c1}{\PYZsh{}testing    }
+  \PY{n+nb}{print}\PY{p}{(}\PY{n}{dataset}\PY{p}{[}\PY{n}{dataset}\PY{o}{.}\PY{n}{bmi} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{80}\PY{p}{)}
+
+  \PY{n}{cols} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bmi}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{dia\PYZus{}BP}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{skin\PYZus{}thickness}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{plasma\PYZus{}glucose}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+  \PY{n}{means} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+  \PY{k}{for} \PY{n}{c} \PY{o+ow}{in} \PY{n}{cols}\PY{p}{:}
+    \PY{n}{mean} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{dataset}\PY{p}{[}\PY{n}{dataset}\PY{p}{[}\PY{n}{c}\PY{p}{]} \PY{o}{!=} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{c}\PY{p}{]}\PY{p}{)}
+    \PY{n}{means}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{mean}\PY{p}{)}
+
+  \PY{k}{for} \PY{n}{c}\PY{p}{,} \PY{n}{m} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{cols}\PY{p}{,} \PY{n}{means}\PY{p}{)}\PY{p}{:}
+    \PY{n}{dataset}\PY{p}{[}\PY{n}{c}\PY{p}{]} \PY{o}{=} \PY{n}{dataset}\PY{p}{[}\PY{n}{c}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{m}\PY{p}{)}
+
+  \PY{c+c1}{\PYZsh{}testing    }
+  \PY{n+nb}{print}\PY{p}{(}\PY{n}{dataset}\PY{p}{[}\PY{n}{dataset}\PY{o}{.}\PY{n}{bmi} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{write-code-to-find-out-how-many-people-in-the-dataset-are-marked-as-having-5-year-diabetes}{%
+\subsection{4.2. Write code to find out how many people in the dataset
+are marked as having 5-year
+diabetes?}\label{write-code-to-find-out-how-many-people-in-the-dataset-are-marked-as-having-5-year-diabetes}}
+
+From the code cell below, 268 patients are marked as having diabetes.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{357}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{dataset}\PY{p}{[}\PY{p}{(}\PY{n}{dataset}\PY{o}{.}\PY{n}{Diab} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{]}
+\PY{c+c1}{\PYZsh{}print(dataset[dataset.Diab == 1].shape[0])}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{357}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+     pregnant  plasma\_glucose  dia\_BP  skin\_thickness  serum\_insulin   bmi  \textbackslash{}
+0           6             148      72              35              0  33.6
+2           8             183      64               0              0  23.3
+4           0             137      40              35            168  43.1
+6           3              78      50              32             88  31.0
+8           2             197      70              45            543  30.5
+..        {\ldots}             {\ldots}     {\ldots}             {\ldots}            {\ldots}   {\ldots}
+755         1             128      88              39            110  36.5
+757         0             123      72               0              0  36.3
+759         6             190      92               0              0  35.5
+761         9             170      74              31              0  44.0
+766         1             126      60               0              0  30.1
+
+     diab\_pedigree  age  Diab
+0            0.627   50     1
+2            0.672   32     1
+4            2.288   33     1
+6            0.248   26     1
+8            0.158   53     1
+..             {\ldots}  {\ldots}   {\ldots}
+755          1.057   37     1
+757          0.258   52     1
+759          0.278   66     1
+761          0.403   43     1
+766          0.349   47     1
+
+[268 rows x 9 columns]
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{creating-logistic-reg.-model-and-visualizing}{%
+\subsection{4.3. Creating Logistic Reg. model and
+visualizing}\label{creating-logistic-reg.-model-and-visualizing}}
+
+    \hypertarget{creating-feature-sets}{%
+\subsubsection{4.3.1. Creating feature
+sets}\label{creating-feature-sets}}
+
+There separate feature sets are created as per \texttt{Q4.3}
+
+\begin{verbatim}
+X <- All features
+X_4_3_a <- 'age', 'pregnant', 'bmi'
+X_4_3_b <- 'skin_thickness', 'diab_pedigree', 'dia_BP'
+\end{verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{358}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{X} \PY{o}{=} \PY{n}{dataset}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Diab}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\PY{n}{X\PYZus{}4\PYZus{}3\PYZus{}a} \PY{o}{=} \PY{n}{dataset}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{age}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pregnant}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bmi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+\PY{n}{X\PYZus{}4\PYZus{}3\PYZus{}b} \PY{o}{=} \PY{n}{dataset}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{skin\PYZus{}thickness}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{diab\PYZus{}pedigree}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dia\PYZus{}BP}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{X}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{80}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{X\PYZus{}4\PYZus{}3\PYZus{}a}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{80}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{X\PYZus{}4\PYZus{}3\PYZus{}b}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{80}\PY{p}{)}
+\PY{n}{y} \PY{o}{=} \PY{n}{dataset}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Diab}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{y}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+   pregnant  plasma\_glucose  dia\_BP  skin\_thickness  serum\_insulin   bmi  \textbackslash{}
+0         6             148      72              35              0  33.6
+1         1              85      66              29              0  26.6
+2         8             183      64               0              0  23.3
+3         1              89      66              23             94  28.1
+4         0             137      40              35            168  43.1
+
+   diab\_pedigree  age
+0          0.627   50
+1          0.351   31
+2          0.672   32
+3          0.167   21
+4          2.288   33
+
+--------------------------------------------------------------------------------
+   age  pregnant   bmi
+0   50         6  33.6
+1   31         1  26.6
+2   32         8  23.3
+3   21         1  28.1
+4   33         0  43.1
+
+--------------------------------------------------------------------------------
+   skin\_thickness  diab\_pedigree  dia\_BP
+0              35          0.627      72
+1              29          0.351      66
+2               0          0.672      64
+3              23          0.167      66
+4              35          2.288      40
+
+--------------------------------------------------------------------------------
+0    1
+1    0
+2    1
+3    0
+4    1
+Name: Diab, dtype: int64
+    \end{Verbatim}
+
+    \hypertarget{logistic-regression}{%
+\subsubsection{4.3.2. Logistic Regression}\label{logistic-regression}}
+
+\hypertarget{using-all-8-input-features}{%
+\paragraph{Using all 8 input
+features}\label{using-all-8-input-features}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{359}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{linear\PYZus{}model} \PY{k}{import} \PY{n}{LogisticRegression}
+\PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{metrics} \PY{k}{import} \PY{n}{confusion\PYZus{}matrix}
+\PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{model\PYZus{}selection} \PY{k}{import} \PY{n}{train\PYZus{}test\PYZus{}split}
+
+\PY{k}{def} \PY{n+nf}{create\PYZus{}model}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{test\PYZus{}size}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{quiet}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+  \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+
+\PY{l+s+sd}{  \PYZdq{}\PYZdq{}\PYZdq{}}
+  \PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}test} \PY{o}{=} \PY{n}{train\PYZus{}test\PYZus{}split}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{test\PYZus{}size}\PY{o}{=}\PY{n}{test\PYZus{}size}\PY{p}{,} \PY{n}{random\PYZus{}state}\PY{o}{=}\PY{n}{random\PYZus{}state}\PY{p}{)}
+  \PY{n}{logreg} \PY{o}{=} \PY{n}{LogisticRegression}\PY{p}{(}\PY{n}{max\PYZus{}iter}\PY{o}{=}\PY{l+m+mi}{200}\PY{p}{)}
+  \PY{n}{logreg}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{)}
+
+  \PY{n}{y\PYZus{}pred} \PY{o}{=} \PY{n}{logreg}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}
+  \PY{n}{test\PYZus{}acc} \PY{o}{=} \PY{n}{logreg}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{,} \PY{n}{y\PYZus{}test}\PY{p}{)}
+  \PY{n}{train\PYZus{}acc} \PY{o}{=} \PY{n}{logreg}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{)}
+  \PY{k}{if} \PY{o+ow}{not} \PY{n}{quiet}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Accuracy of Logistic Regression Classifier: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{on test set: }\PY{l+s+si}{\PYZob{}test\PYZus{}acc:.2f\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{on train set: }\PY{l+s+si}{\PYZob{}train\PYZus{}acc:.2f\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Confusion Matrix:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{confusion\PYZus{}matrix}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{y\PYZus{}pred}\PY{p}{)}\PY{p}{)}
+  \PY{n}{influence} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}\PY{o}{*}\PY{n}{logreg}\PY{o}{.}\PY{n}{coef\PYZus{}}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+  \PY{k}{return} \PY{n}{test\PYZus{}acc}\PY{p}{,} \PY{n}{train\PYZus{}acc}\PY{p}{,} \PY{n}{influence}
+
+\PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{influence1} \PY{o}{=} \PY{n}{create\PYZus{}model}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Accuracy of Logistic Regression Classifier:
+on test set: 0.78
+on train set: 0.77
+Confusion Matrix:
+ [[141  16]
+ [ 35  39]]
+    \end{Verbatim}
+
+    \hypertarget{a.-only-age-pregnant-and-bmi-as-the-input-features}{%
+\paragraph{a. Only age, pregnant, and bmi as the input
+features}\label{a.-only-age-pregnant-and-bmi-as-the-input-features}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{360}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{create\PYZus{}model}\PY{p}{(}\PY{n}{X\PYZus{}4\PYZus{}3\PYZus{}a}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Accuracy of Logistic Regression Classifier:
+on test set: 0.68
+on train set: 0.69
+Confusion Matrix:
+ [[135  22]
+ [ 51  23]]
+    \end{Verbatim}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{360}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+(0.683982683982684, 0.6871508379888268, age         0.488079
+ pregnant    0.218059
+ bmi         0.869156
+ dtype: float64)
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{b.-only-skin_thickness-diab_pedigree-and-dia_bp-as-the-input-features}{%
+\paragraph{b. Only skin\_thickness, diab\_pedigree, and dia\_BP as the
+input
+features}\label{b.-only-skin_thickness-diab_pedigree-and-dia_bp-as-the-input-features}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{361}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{create\PYZus{}model}\PY{p}{(}\PY{n}{X\PYZus{}4\PYZus{}3\PYZus{}b}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Accuracy of Logistic Regression Classifier:
+on test set: 0.68
+on train set: 0.64
+Confusion Matrix:
+ [[151   6]
+ [ 68   6]]
+    \end{Verbatim}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{361}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+(0.6796536796536796, 0.6443202979515829, skin\_thickness    0.134746
+ diab\_pedigree     0.276704
+ dia\_BP            0.136894
+ dtype: float64)
+\end{Verbatim}
+\end{tcolorbox}
+
+    %\hypertarget{trying-out-alternate-input-feature-sets}{%
+%\paragraph{Trying out alternate input feature
+%sets}\label{trying-out-alternate-input-feature-sets}}
+
+`plasma\_glucose', `serum\_insulin', `bmi', `diab\_pedigree'
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{362}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}picked from top correlations}
+\PY{n}{X\PYZus{}4\PYZus{}3\PYZus{}x} \PY{o}{=} \PY{n}{dataset}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{plasma\PYZus{}glucose}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{serum\PYZus{}insulin}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bmi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{diab\PYZus{}pedigree}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+\PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{influence2} \PY{o}{=} \PY{n}{create\PYZus{}model}\PY{p}{(}\PY{n}{X\PYZus{}4\PYZus{}3\PYZus{}x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Accuracy of Logistic Regression Classifier:
+on test set: 0.80
+on train set: 0.76
+Confusion Matrix:
+ [[143  14]
+ [ 33  41]]
+    \end{Verbatim}
+
+    \hypertarget{out-of-the-three-models-all-features-and-then-a-b-features-which-model-performs-the-best-in-classification-specify-the-reason-too.}{%
+\subsection{4.4. Out of the three models (all features, and then (a),
+(b) features), which model performs the best in classification? Specify
+the reason
+too.}\label{out-of-the-three-models-all-features-and-then-a-b-features-which-model-performs-the-best-in-classification-specify-the-reason-too.}}
+
+\textbf{Without Replacing outlier zeros}
+%\hypertarget{without-replacing-outlier-zeros}{%
+%\paragraph{Without replacing outlier
+%zeros}\label{without-replacing-outlier-zeros}}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+\begin{minipage}[b]{0.22\columnwidth}\raggedright
+Features Selected\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
+Test Accuracy\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
+Train Accuracy\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
+Confusion Matrix (tn, fp, fn, tp)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.22\columnwidth}\raggedright
+all features\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.78\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.77\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+141, 16, 35, 39\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.22\columnwidth}\raggedright
+4.3.a) age, pregnant, and bmi\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.68\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.69\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+135, 22, 51, 23\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.22\columnwidth}\raggedright
+4.3.b) skin\_thickness, diab\_pedigree, dia\_BP\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.68\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.64\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+151, 6, 68, 6\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.22\columnwidth}\raggedright
+plasma\_glucose, serum\_insulin, bmi, diab\_pedigree\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.80\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.76\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+143, 14, 33, 41\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\textbf{After Replacing Outlier Zeros with Mean}
+%\hypertarget{after-replacing-outlier-zeros-with-mean}{%
+%\paragraph{After replacing outlier zeros with
+%mean}\label{after-replacing-outlier-zeros-with-mean}}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+\begin{minipage}[b]{0.22\columnwidth}\raggedright
+Features Selected\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
+Test Accuracy\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
+Train Accuracy\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
+Confusion Matrix (tn, fp, fn, tp)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.22\columnwidth}\raggedright
+all features\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.77\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.77\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+141, 16, 36, 38\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.22\columnwidth}\raggedright
+4.3.a) age, pregnant, and bmi\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.69\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.69\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+136, 21, 50, 24\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.22\columnwidth}\raggedright
+4.3.b) skin\_thickness, diab\_pedigree, dia\_BP\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.72\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.65\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+150, 7, 57, 17\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.22\columnwidth}\raggedright
+plasma\_glucose, serum\_insulin, bmi, diab\_pedigree\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.79\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+0.77\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+140, 17, 31, 43\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+
+
+The model with all 8 features performs best in the original three cases.
+This was because the other two \texttt{4.3.a} \& \texttt{4.3.b} might
+not have been able to capture the true model as soem significant
+feature, like \texttt{plasma\_glucose}, might have been omitted.
+
+On exploring to find if a better feature set existed it was found that
+\texttt{(plasma\_glucose,\ serum\_insulin,\ bmi,\ diab\_pedigree)}
+performed better than the \texttt{8-input\ feature\ set}. For such a
+small dataset, it might be hard to know if this will always hold true.
+But finding conforms with existing literature on diabetes risks.
+
+Replacing zeros with mean didn't improve the best performing sets.
+Perhaps, this might be due to the fact that the outliers are preventing
+the model from overfitting to any particular feature too much.
+
+Interestingly,
+\texttt{4.3.b)\ skin\_thickness,\ diab\_pedigree,\ dia\_BP} had the best
+true-negative among all, but it performed poorly on every other
+confusion matrix values (fn, fp \& tp).
+
+It was also observed that, using a \texttt{test\_size=0.2} also improves
+the test accuracy.
+
+Since we were able to achieve a better performance with fewer input
+features
+\texttt{(plasma\_glucose,\ serum\_insulin,\ bmi,\ diab\_pedigree)}, the
+remaining input features can be considered insignificant for this
+particular dataset. It was also note that the aforementioned four
+features had a higher correlation with \texttt{Diab}, when compared to
+features like \texttt{skin\_thickness}.
+
+In the cell below, the influence of each feature can be observed from
+the \texttt{logreg.coef\_} which are the magnitude of the coefficients,
+multiplied by \texttt{S.D} of each feature set
+\href{https://stackoverflow.com/questions/34052115/how-to-find-the-importance-of-the-features-for-a-logistic-regression-model}{Ref}.
+Even though, \texttt{dia\_BP} has a higher magnitude than
+\texttt{serum\_insulin} when all features were used, it doesn't improve
+performance - {[}code in last cell{]}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{363}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{8 input feature set}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{influence1}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{*}\PY{l+m+mi}{40}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{4 input feature set}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{influence2}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+8 input feature set
+dia\_BP           -0.226341
+serum\_insulin    -0.145447
+skin\_thickness    0.099055
+diab\_pedigree     0.226526
+pregnant          0.290324
+age               0.292800
+bmi               0.708817
+plasma\_glucose    1.089174
+dtype: float64
+----------------------------------------
+4 input feature set
+serum\_insulin    -0.195370
+diab\_pedigree     0.230057
+bmi               0.623056
+plasma\_glucose    1.181423
+dtype: float64
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{366}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}Trying to find if a better accuracy feature set exist iteratively since we have a small dataset}
+\PY{k+kn}{from}  \PY{n+nn}{itertools} \PY{k}{import} \PY{n}{combinations}
+\PY{n}{features} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pregnant}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{plasma\PYZus{}glucose}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dia\PYZus{}BP}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} 	\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{skin\PYZus{}thickness}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} 	\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{serum\PYZus{}insulin}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} 	\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bmi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} 	\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{diab\PYZus{}pedigree}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} 	\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{age}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\PY{n}{combs} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n}{combinations}\PY{p}{(}\PY{n}{features}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{}get all combinations of r=4}
+\PY{c+c1}{\PYZsh{}sum([list(map(list, combinations(features, i))) for i in range(1, len(features) + 1)], []) }
+\PY{n}{best\PYZus{}test} \PY{o}{=} \PY{l+m+mi}{0}
+\PY{n}{best\PYZus{}feature\PYZus{}set} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+\PY{k}{for} \PY{n}{c} \PY{o+ow}{in} \PY{n}{combs}\PY{p}{:}
+  \PY{n}{X\PYZus{}4\PYZus{}3\PYZus{}x} \PY{o}{=} \PY{n}{dataset}\PY{p}{[}\PY{n+nb}{list}\PY{p}{(}\PY{n}{c}\PY{p}{)}\PY{p}{]}
+  \PY{n}{test\PYZus{}acc}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{\PYZus{}} \PY{o}{=} \PY{n}{create\PYZus{}model}\PY{p}{(}\PY{n}{X\PYZus{}4\PYZus{}3\PYZus{}x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{quiet}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+  \PY{k}{if} \PY{n}{test\PYZus{}acc} \PY{o}{\PYZgt{}} \PY{n}{best\PYZus{}test}\PY{p}{:}
+    \PY{n}{best\PYZus{}test} \PY{o}{=} \PY{n}{test\PYZus{}acc}
+    \PY{n}{best\PYZus{}feature\PYZus{}set} \PY{o}{=} \PY{n}{c}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{best 4 input feature set \PYZhy{} }\PY{l+s+si}{\PYZob{}best\PYZus{}feature\PYZus{}set\PYZcb{}}\PY{l+s+s2}{, test\PYZus{}acc = }\PY{l+s+si}{\PYZob{}best\PYZus{}test:.2f\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+best 4 input feature set - ('plasma\_glucose', 'serum\_insulin', 'bmi',
+'diab\_pedigree'), test\_acc = 0.80
+    \end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+
+
+
+\end{document}

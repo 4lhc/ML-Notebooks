@@ -1,0 +1,98 @@
+
+<tex2html_mydb_mark>#AlertTok#1:!:\textcolor[rgb]<<140>>1.00,0.00,0.00<<140>><<848>>\textbf<<690>><<141>>#1<<141>><<690>><<848>>:!:}
+<tex2html_mydb_mark>#AnnotationTok#1:!:\textcolor[rgb]<<170>>0.38,0.63,0.69<<170>><<947>>\textbf<<856>>\textit<<701>><<171>>#1<<171>><<701>><<856>><<947>>:!:}
+<tex2html_mydb_mark>#AttributeTok#1:!:\textcolor[rgb]<<192>>0.49,0.56,0.16<<192>><<709>><<193>>#1<<193>><<709>>:!:}
+<tex2html_mydb_mark>#BaseNTok#1:!:\textcolor[rgb]<<122>>0.25,0.63,0.44<<122>><<684>><<123>>#1<<123>><<684>>:!:}
+<tex2html_mydb_mark>#BuiltInTok#1:!:<<185>>#1<<185>>:!:}
+<tex2html_mydb_mark>#CharTok#1:!:\textcolor[rgb]<<128>>0.25,0.44,0.63<<128>><<686>><<129>>#1<<129>><<686>>:!:}
+<tex2html_mydb_mark>#CommentTok#1:!:\textcolor[rgb]<<134>>0.38,0.63,0.69<<134>><<846>>\textit<<688>><<135>>#1<<135>><<688>><<846>>:!:}
+<tex2html_mydb_mark>#CommentVarTok#1:!:\textcolor[rgb]<<173>>0.38,0.63,0.69<<173>><<948>>\textbf<<857>>\textit<<702>><<174>>#1<<174>><<702>><<857>><<948>>:!:}
+<tex2html_mydb_mark>#ConstantTok#1:!:\textcolor[rgb]<<153>>0.53,0.00,0.00<<153>><<695>><<154>>#1<<154>><<695>>:!:}
+<tex2html_mydb_mark>#ControlFlowTok#1:!:\textcolor[rgb]<<179>>0.00,0.44,0.13<<179>><<859>>\textbf<<704>><<180>>#1<<180>><<704>><<859>>:!:}
+<tex2html_mydb_mark>#DataTypeTok#1:!:\textcolor[rgb]<<116>>0.56,0.13,0.00<<116>><<682>><<117>>#1<<117>><<682>>:!:}
+<tex2html_mydb_mark>#DecValTok#1:!:\textcolor[rgb]<<119>>0.25,0.63,0.44<<119>><<683>><<120>>#1<<120>><<683>>:!:}
+<tex2html_mydb_mark>#DocumentationTok#1:!:\textcolor[rgb]<<167>>0.73,0.13,0.13<<167>><<855>>\textit<<700>><<168>>#1<<168>><<700>><<855>>:!:}
+<tex2html_mydb_mark>#ErrorTok#1:!:\textcolor[rgb]<<148>>1.00,0.00,0.00<<148>><<850>>\textbf<<693>><<149>>#1<<149>><<693>><<850>>:!:}
+<tex2html_mydb_mark>#ExtensionTok#1:!:<<187>>#1<<187>>:!:}
+<tex2html_mydb_mark>#FloatTok#1:!:\textcolor[rgb]<<125>>0.25,0.63,0.44<<125>><<685>><<126>>#1<<126>><<685>>:!:}
+<tex2html_mydb_mark>#FunctionTok#1:!:\textcolor[rgb]<<143>>0.02,0.16,0.49<<143>><<691>><<144>>#1<<144>><<691>>:!:}
+<tex2html_mydb_mark>#ImportTok#1:!:<<165>>#1<<165>>:!:}
+<tex2html_mydb_mark>#InformationTok#1:!:\textcolor[rgb]<<195>>0.38,0.63,0.69<<195>><<950>>\textbf<<863>>\textit<<710>><<196>>#1<<196>><<710>><<863>><<950>>:!:}
+<tex2html_mydb_mark>#KeywordTok#1:!:\textcolor[rgb]<<113>>0.00,0.44,0.13<<113>><<839>>\textbf<<681>><<114>>#1<<114>><<681>><<839>>:!:}
+<tex2html_mydb_mark>#LaTeX#0:!:\textrm<<206>>\Oldlatex<<206>>:!:}
+<tex2html_mydb_mark>#NormalTok#1:!:<<151>>#1<<151>>:!:}
+<tex2html_mydb_mark>#OperatorTok#1:!:\textcolor[rgb]<<182>>0.40,0.40,0.40<<182>><<705>><<183>>#1<<183>><<705>>:!:}
+<tex2html_mydb_mark>#OtherTok#1:!:\textcolor[rgb]<<137>>0.00,0.44,0.13<<137>><<689>><<138>>#1<<138>><<689>>:!:}
+<tex2html_mydb_mark>#PY#2:!:\csname PY\endcsname @reset\csname PY\endcsname @toks@+\relax+\csname PY\endcsname @do<<968>>r<<968>>eset\PY @toks#1+\relax+\PY @do<<212>>#2<<212>>:!:}
+<tex2html_mydb_mark>#PY@do#1:!:\csname PY\endcsname @reset\csname PY\endcsname @toks@+\relax+\csname PY\endcsname @do<<969>>r<<969>>eset\csname PY\endcsname @toks@+\relax+\csname PY\endcsname @do<<970>>b<<970>>c<<960>>\PY @tc<<959>>\PY @ul<<952>>\PY @it<<865>>\PY @bf<<716>>\PY @ff<<211>>#1<<211>><<716>><<865>><<952>><<959>><<960>>:!:}
+<tex2html_mydb_mark>#PY@reset#0:!:\let\csname PY\endcsname @reset\csname PY\endcsname @toks@+\relax+\csname PY\endcsname @do<<971>>r<<971>>eset\csname PY\endcsname @toks@+\relax+\csname PY\endcsname @do<<972>>i<<972>>t=\relax \let\PY @bf=\relax \let\PY @ul=\relax \let\PY @tc=\relax \let\PY @bc=\relax \let\PY @ff=\relax:!:}
+<tex2html_mydb_mark>#PY@tok#1:!:\csname PY@tok@#1\endcsname:!:}
+<tex2html_mydb_mark>#PYZam#0:!:\char`\&:!:}
+<tex2html_mydb_mark>#PYZat#0:!:@:!:}
+<tex2html_mydb_mark>#PYZbs#0:!:\char`\\ :!:}
+<tex2html_mydb_mark>#PYZca#0:!:\char`\^:!:}
+<tex2html_mydb_mark>#PYZcb#0:!:\char`\}:!:}
+<tex2html_mydb_mark>#PYZdl#0:!:\char`\$:!:}
+<tex2html_mydb_mark>#PYZdq#0:!:\char`\":!:}
+<tex2html_mydb_mark>#PYZgt#0:!:\char`\>:!:}
+<tex2html_mydb_mark>#PYZhy#0:!:\char`\-:!:}
+<tex2html_mydb_mark>#PYZlb#0:!:[:!:}
+<tex2html_mydb_mark>#PYZlt#0:!:\char`\<:!:}
+<tex2html_mydb_mark>#PYZob#0:!:\char`\{:!:}
+<tex2html_mydb_mark>#PYZpc#0:!:\char`\%:!:}
+<tex2html_mydb_mark>#PYZrb#0:!:]:!:}
+<tex2html_mydb_mark>#PYZsh#0:!:\char`\#:!:}
+<tex2html_mydb_mark>#PYZsq#0:!:\char`\':!:}
+<tex2html_mydb_mark>#PYZti#0:!:\char`\~:!:}
+<tex2html_mydb_mark>#PYZus#0:!:\char`\_:!:}
+<tex2html_mydb_mark>#PreprocessorTok#1:!:\textcolor[rgb]<<189>>0.74,0.48,0.00<<189>><<708>><<190>>#1<<190>><<708>>:!:}
+<tex2html_mydb_mark>#RegionMarkerTok#1:!:<<146>>#1<<146>>:!:}
+<tex2html_mydb_mark>#SpecialCharTok#1:!:\textcolor[rgb]<<156>>0.25,0.44,0.63<<156>><<696>><<157>>#1<<157>><<696>>:!:}
+<tex2html_mydb_mark>#SpecialStringTok#1:!:\textcolor[rgb]<<162>>0.73,0.40,0.53<<162>><<698>><<163>>#1<<163>><<698>>:!:}
+<tex2html_mydb_mark>#StringTok#1:!:\textcolor[rgb]<<131>>0.25,0.44,0.63<<131>><<687>><<132>>#1<<132>><<687>>:!:}
+<tex2html_mydb_mark>#TeX#0:!:\textrm<<204>>\Oldtex<<204>>:!:}
+<tex2html_mydb_mark>#VariableTok#1:!:\textcolor[rgb]<<176>>0.10,0.09,0.49<<176>><<703>><<177>>#1<<177>><<703>>:!:}
+<tex2html_mydb_mark>#Verbatim#1:!:\sbox\Wrappedcontinuationbox <<443>>\textcolor<<973>>red<<973>><<974>>\llap<<975>>\tiny$\m@th\hookrightarrow$<<975>><<974>><<443>>\sbox\Wrappedvisiblespacebox <<444>>\FV@SetupFont\textcolor<<976>>red<<976>><<977>>\textvisiblespace<<977>><<444>>\def \FancyVerbFormatLine ##1<<813>>\hsize\linewidth
+            \vtop<<445>>\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut<<445>><<813>>\def \FV@Space <<814>>\nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary<<446>>\copy\Wrappedvisiblespacebox<<446>><<447>>\kern3ex \copy\Wrappedcontinuationbox <<447>>
+            <<448>>\kern\fontdimen2\font<<448>><<814>>\par 
+\def \PYGZus<<978>>\discretionary<<992>>\char`\_<<992>><<993>>\kern3ex \copy\Wrappedcontinuationbox <<993>><<994>>\char`\_<<994>><<978>>\def \PYGZob<<979>>\discretionary<<995>><<995>><<996>>\kern3ex \copy\Wrappedcontinuationbox \char`\{<<996>><<997>>\char`\{<<997>><<979>>\def \PYGZcb<<980>>\discretionary<<998>>\char`\}<<998>><<999>>\kern3ex \copy\Wrappedcontinuationbox <<999>><<1000>>\char`\}<<1000>><<980>>\def \PYGZca<<981>>\discretionary<<1001>>\char`\^<<1001>><<1002>>\kern3ex \copy\Wrappedcontinuationbox <<1002>><<1003>>\char`\^<<1003>><<981>>\def \PYGZam<<982>>\discretionary<<1004>>\char`\&<<1004>><<1005>>\kern3ex \copy\Wrappedcontinuationbox <<1005>><<1006>>\char`\&<<1006>><<982>>\def \PYGZlt<<983>>\discretionary<<1007>><<1007>><<1008>>\kern3ex \copy\Wrappedcontinuationbox \char`\<<<1008>><<1009>>\char`\<<<1009>><<983>>\def \PYGZgt<<984>>\discretionary<<1010>>\char`\><<1010>><<1011>>\kern3ex \copy\Wrappedcontinuationbox <<1011>><<1012>>\char`\><<1012>><<984>>\def \PYGZsh<<985>>\discretionary<<1013>><<1013>><<1014>>\kern3ex \copy\Wrappedcontinuationbox \char`\#<<1014>><<1015>>\char`\#<<1015>><<985>>\def \PYGZpc<<986>>\discretionary<<1016>><<1016>><<1017>>\kern3ex \copy\Wrappedcontinuationbox \char`\%<<1017>><<1018>>\char`\%<<1018>><<986>>\def \PYGZdl<<987>>\discretionary<<1019>><<1019>><<1020>>\kern3ex \copy\Wrappedcontinuationbox \char`\$<<1020>><<1021>>\char`\$<<1021>><<987>>\def \PYGZhy<<988>>\discretionary<<1022>>\char`\-<<1022>><<1023>>\kern3ex \copy\Wrappedcontinuationbox <<1023>><<1024>>\char`\-<<1024>><<988>>\def \PYGZsq<<989>>\discretionary<<1025>><<1025>><<1026>>\kern3ex \copy\Wrappedcontinuationbox \textquotesingle<<1026>><<1027>>\textquotesingle<<1027>><<989>>\def \PYGZdq<<990>>\discretionary<<1028>><<1028>><<1029>>\kern3ex \copy\Wrappedcontinuationbox \char`\"<<1029>><<1030>>\char`\"<<1030>><<990>>\def \PYGZti<<991>>\discretionary<<1031>>\char`\~<<1031>><<1032>>\kern3ex \copy\Wrappedcontinuationbox <<1032>><<1033>>\char`\~<<1033>><<991>>
+        \OriginalVerbatim[#1,codes*=\lccode`\~`\.\lowercase<<1034>>\def ~<<1034>><<1035>>\discretionary<<1048>>\hbox<<1069>>\char`\.<<1069>><<1048>><<1049>>\kern3ex \copy\Wrappedcontinuationbox <<1049>><<1050>>\hbox<<1070>>\char`\.<<1070>><<1050>><<1035>>\lccode`\~`\,\lowercase<<1036>>\def ~<<1036>><<1037>>\discretionary<<1051>>\hbox<<1071>>\char`\,<<1071>><<1051>><<1052>>\kern3ex \copy\Wrappedcontinuationbox <<1052>><<1053>>\hbox<<1072>>\char`\,<<1072>><<1053>><<1037>>\lccode`\~`\;\lowercase<<1038>>\def ~<<1038>><<1039>>\discretionary<<1054>>\hbox<<1073>>\char`\;<<1073>><<1054>><<1055>>\kern3ex \copy\Wrappedcontinuationbox <<1055>><<1056>>\hbox<<1074>>\char`\;<<1074>><<1056>><<1039>>\lccode`\~`\:\lowercase<<1040>>\def ~<<1040>><<1041>>\discretionary<<1057>>\hbox<<1075>>\char`\:<<1075>><<1057>><<1058>>\kern3ex \copy\Wrappedcontinuationbox <<1058>><<1059>>\hbox<<1076>>\char`\:<<1076>><<1059>><<1041>>\lccode`\~`\?\lowercase<<1042>>\def ~<<1042>><<1043>>\discretionary<<1060>>\hbox<<1077>>\char`\?<<1077>><<1060>><<1061>>\kern3ex \copy\Wrappedcontinuationbox <<1061>><<1062>>\hbox<<1078>>\char`\?<<1078>><<1062>><<1043>>\lccode`\~`\!\lowercase<<1044>>\def ~<<1044>><<1045>>\discretionary<<1063>>\hbox<<1079>>\char`\!<<1079>><<1063>><<1064>>\kern3ex \copy\Wrappedcontinuationbox <<1064>><<1065>>\hbox<<1080>>\char`\!<<1080>><<1065>><<1045>>\lccode`\~`\/\lowercase<<1046>>\def ~<<1046>><<1047>>\discretionary<<1066>>\hbox<<1081>>\char`\/<<1081>><<1066>><<1067>>\kern3ex \copy\Wrappedcontinuationbox <<1067>><<1068>>\hbox<<1082>>\char`\/<<1082>><<1068>><<1047>>\catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        ]:!:1
+<tex2html_mydb_mark>#VerbatimStringTok#1:!:\textcolor[rgb]<<159>>0.25,0.44,0.63<<159>><<697>><<160>>#1<<160>><<697>>:!:}
+<tex2html_mydb_mark>#WarningTok#1:!:\textcolor[rgb]<<198>>0.38,0.63,0.69<<198>><<951>>\textbf<<864>>\textit<<711>><<199>>#1<<199>><<711>><<864>><<951>>:!:}
+<tex2html_mydb_mark>#Wrappedafterbreak#0:!:\kern3ex \copy\Wrappedcontinuationbox:!:}
+<tex2html_mydb_mark>#Wrappedbreaksatpunct#0:!:\lccode`\~`\.\lowercase<<414>>\def ~<<414>><<933>>\discretionary<<799>>\hbox<<415>>\char`\.<<415>><<799>><<416>>\kern3ex \copy\Wrappedcontinuationbox <<416>><<800>>\hbox<<417>>\char`\.<<417>><<800>><<933>>\lccode`\~`\,\lowercase<<418>>\def ~<<418>><<934>>\discretionary<<801>>\hbox<<419>>\char`\,<<419>><<801>><<420>>\kern3ex \copy\Wrappedcontinuationbox <<420>><<802>>\hbox<<421>>\char`\,<<421>><<802>><<934>>\lccode`\~`\;\lowercase<<422>>\def ~<<422>><<935>>\discretionary<<803>>\hbox<<423>>\char`\;<<423>><<803>><<424>>\kern3ex \copy\Wrappedcontinuationbox <<424>><<804>>\hbox<<425>>\char`\;<<425>><<804>><<935>>\lccode`\~`\:\lowercase<<426>>\def ~<<426>><<936>>\discretionary<<805>>\hbox<<427>>\char`\:<<427>><<805>><<428>>\kern3ex \copy\Wrappedcontinuationbox <<428>><<806>>\hbox<<429>>\char`\:<<429>><<806>><<936>>\lccode`\~`\?\lowercase<<430>>\def ~<<430>><<937>>\discretionary<<807>>\hbox<<431>>\char`\?<<431>><<807>><<432>>\kern3ex \copy\Wrappedcontinuationbox <<432>><<808>>\hbox<<433>>\char`\?<<433>><<808>><<937>>\lccode`\~`\!\lowercase<<434>>\def ~<<434>><<938>>\discretionary<<809>>\hbox<<435>>\char`\!<<435>><<809>><<436>>\kern3ex \copy\Wrappedcontinuationbox <<436>><<810>>\hbox<<437>>\char`\!<<437>><<810>><<938>>\lccode`\~`\/\lowercase<<438>>\def ~<<438>><<939>>\discretionary<<811>>\hbox<<439>>\char`\/<<439>><<811>><<440>>\kern3ex \copy\Wrappedcontinuationbox <<440>><<812>>\hbox<<441>>\char`\/<<441>><<812>><<939>>\catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        :!:}
+<tex2html_mydb_mark>#Wrappedbreaksatspecials#0:!:\def \PYGZus<<785>>\discretionary<<372>>\char`\_<<372>><<373>>\kern3ex \copy\Wrappedcontinuationbox <<373>><<374>>\char`\_<<374>><<785>>\def \PYGZob<<786>>\discretionary<<375>><<375>><<376>>\kern3ex \copy\Wrappedcontinuationbox \char`\{<<376>><<377>>\char`\{<<377>><<786>>\def \PYGZcb<<787>>\discretionary<<378>>\char`\}<<378>><<379>>\kern3ex \copy\Wrappedcontinuationbox <<379>><<380>>\char`\}<<380>><<787>>\def \PYGZca<<788>>\discretionary<<381>>\char`\^<<381>><<382>>\kern3ex \copy\Wrappedcontinuationbox <<382>><<383>>\char`\^<<383>><<788>>\def \PYGZam<<789>>\discretionary<<384>>\char`\&<<384>><<385>>\kern3ex \copy\Wrappedcontinuationbox <<385>><<386>>\char`\&<<386>><<789>>\def \PYGZlt<<790>>\discretionary<<387>><<387>><<388>>\kern3ex \copy\Wrappedcontinuationbox \char`\<<<388>><<389>>\char`\<<<389>><<790>>\def \PYGZgt<<791>>\discretionary<<390>>\char`\><<390>><<391>>\kern3ex \copy\Wrappedcontinuationbox <<391>><<392>>\char`\><<392>><<791>>\def \PYGZsh<<792>>\discretionary<<393>><<393>><<394>>\kern3ex \copy\Wrappedcontinuationbox \char`\#<<394>><<395>>\char`\#<<395>><<792>>\def \PYGZpc<<793>>\discretionary<<396>><<396>><<397>>\kern3ex \copy\Wrappedcontinuationbox \char`\%<<397>><<398>>\char`\%<<398>><<793>>\def \PYGZdl<<794>>\discretionary<<399>><<399>><<400>>\kern3ex \copy\Wrappedcontinuationbox \char`\$<<400>><<401>>\char`\$<<401>><<794>>\def \PYGZhy<<795>>\discretionary<<402>>\char`\-<<402>><<403>>\kern3ex \copy\Wrappedcontinuationbox <<403>><<404>>\char`\-<<404>><<795>>\def \PYGZsq<<796>>\discretionary<<405>><<405>><<406>>\kern3ex \copy\Wrappedcontinuationbox \textquotesingle<<406>><<407>>\textquotesingle<<407>><<796>>\def \PYGZdq<<797>>\discretionary<<408>><<408>><<409>>\kern3ex \copy\Wrappedcontinuationbox \char`\"<<409>><<410>>\char`\"<<410>><<797>>\def \PYGZti<<798>>\discretionary<<411>>\char`\~<<411>><<412>>\kern3ex \copy\Wrappedcontinuationbox <<412>><<413>>\char`\~<<413>><<798>>:!:}
+<tex2html_mydb_mark>#Wrappedcontinuationindent#0:!:3ex :!:}
+<tex2html_mydb_mark>#Wrappedcontinuationsymbol#0:!:\textcolor<<368>>red<<368>><<784>>\llap<<369>>\tiny$\m@th\hookrightarrow$<<369>><<784>>:!:}
+<tex2html_mydb_mark>#Wrappedvisiblespace#0:!:\textcolor<<366>>red<<366>><<367>>\textvisiblespace<<367>>:!:}
+<tex2html_mydb_mark>#begingroup#0:!:\begin<<0>>tex2html_begingroup<<0>>:!:}
+<tex2html_mydb_mark>#bgroup#0:!:\begin<<0>>tex2html_bgroup<<0>>:!:}
+<tex2html_mydb_mark>#boxspacing#0:!:\kern\kvtcb@left@rule\kern\kvtcb@boxsep:!:}
+<tex2html_mydb_mark>#br#0:!:\hspace*<<200>>\fill<<200>> \\ * :!:}
+<tex2html_mydb_mark>#egroup#0:!:\end<<0>>tex2html_bgroup<<0>>:!:}
+<tex2html_mydb_mark>#endgroup#0:!:\end<<0>>tex2html_begingroup<<0>>:!:}
+<tex2html_mydb_mark>#gt#0:!:;SPMgt;:!:}
+<tex2html_mydb_mark>#lt#0:!:;SPMlt;:!:}
+<tex2html_mydb_mark>#prompt#4:!:
+        \ttfamily\llap<<941>><<815>>\color<<464>>#2<<464>>[#3]:\hspace<<465>>3pt<<465>>#4<<815>><<941>>\vspace<<466>>-\baselineskip<<466>>
+    :!:}
+<tex2html_mydb_mark>#tightlist#0:!:\setlength<<102>>\itemsep<<102>><<103>>0pt<<103>>\setlength<<104>>\parskip<<104>><<105>>0pt<<105>>:!:}

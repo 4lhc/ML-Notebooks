@@ -1,0 +1,577 @@
+\documentclass[11pt]<<1>>article<<1>>
+\begin<<1361>>tex2html_deferred<<1361>>\par\end<<1362>>tex2html_deferred<<1362>>
+\usepackage<<2>>tikz<<2>>
+    \usepackage[breakable]<<3>>tcolorbox<<3>>
+    \usepackage<<4>>parskip<<4>> 
+\begin<<1363>>tex2html_deferred<<1363>>\par\end<<1364>>tex2html_deferred<<1364>>
+\usepackage<<5>>iftex<<5>>
+    \ifPDFTeX
+    	\usepackage[T1]<<6>>fontenc<<6>>
+    	\usepackage<<7>>mathpazo<<7>>
+    \else
+    	\usepackage<<8>>fontspec<<8>>
+    \fi
+\begin<<1365>>tex2html_deferred<<1365>>\par\end<<1366>>tex2html_deferred<<1366>>
+\usepackage<<9>>graphicx<<9>>
+    <tex2html_comment_mark>2
+\let\Oldincludegraphics\includegraphics
+    <tex2html_comment_mark>3
+\usepackage<<10>>caption<<10>>
+    \DeclareCaptionFormat<<11>>nocaption<<11>><<12>><<12>>
+    \captionsetup<<13>>format=nocaption,aboveskip=0pt,belowskip=0pt<<13>>
+\begin<<1367>>tex2html_deferred<<1367>>\par\end<<1368>>tex2html_deferred<<1368>>
+\usepackage[Export]<<14>>adjustbox<<14>> 
+    \adjustboxset<<678>>max size=<<15>>0.9\linewidth<<15>><<16>>0.9\paperheight<<16>><<678>>
+    \usepackage<<17>>float<<17>>
+    \floatplacement<<18>>figure<<18>><<19>>H<<19>> <tex2html_comment_mark>5
+\usepackage<<20>>xcolor<<20>> 
+    \usepackage<<21>>enumerate<<21>> 
+    \usepackage<<22>>geometry<<22>> 
+    \usepackage<<23>>amsmath<<23>> 
+    \usepackage<<24>>amssymb<<24>> 
+    \usepackage<<25>>textcomp<<25>> 
+    <tex2html_comment_mark>6
+\AtBeginDocument<<679>><tex2html_comment_mark>7
+<<679>>
+    \usepackage<<27>>upquote<<27>> 
+    \usepackage<<28>>eurosym<<28>> 
+    \usepackage[mathletters]<<29>>ucs<<29>> 
+    \usepackage<<30>>fancyvrb<<30>> 
+\begin<<1369>>tex2html_deferred<<1369>>\par\end<<1370>>tex2html_deferred<<1370>>
+\usepackage<<31>>hyperref<<31>>
+    <tex2html_comment_mark>11
+\usepackage<<32>>titling<<32>>
+    \usepackage<<33>>longtable<<33>> 
+    \usepackage<<34>>booktabs<<34>>  
+    \usepackage[inline]<<35>>enumitem<<35>> 
+    \usepackage[normalem]<<36>>ulem<<36>> 
+                                <tex2html_comment_mark>12
+\usepackage<<37>>mathrsfs<<37>>
+\begin<<1371>>tex2html_deferred<<1371>>\par\end<<1372>>tex2html_deferred<<1372>>
+\definecolor<<38>>urlcolor<<38>><<39>>rgb<<39>><<40>>0,.145,.698<<40>>
+    \definecolor<<41>>linkcolor<<41>><<42>>rgb<<42>><<43>>.71,0.21,0.01<<43>>
+    \definecolor<<44>>citecolor<<44>><<45>>rgb<<45>><<46>>.12,.54,.11<<46>>
+\begin<<1373>>tex2html_deferred<<1373>>\par\end<<1374>>tex2html_deferred<<1374>>
+\definecolor<<47>>ansi-black<<47>><<48>>HTML<<48>><<49>>3E424D<<49>>
+    \definecolor<<50>>ansi-black-intense<<50>><<51>>HTML<<51>><<52>>282C36<<52>>
+    \definecolor<<53>>ansi-red<<53>><<54>>HTML<<54>><<55>>E75C58<<55>>
+    \definecolor<<56>>ansi-red-intense<<56>><<57>>HTML<<57>><<58>>B22B31<<58>>
+    \definecolor<<59>>ansi-green<<59>><<60>>HTML<<60>><<61>>00A250<<61>>
+    \definecolor<<62>>ansi-green-intense<<62>><<63>>HTML<<63>><<64>>007427<<64>>
+    \definecolor<<65>>ansi-yellow<<65>><<66>>HTML<<66>><<67>>DDB62B<<67>>
+    \definecolor<<68>>ansi-yellow-intense<<68>><<69>>HTML<<69>><<70>>B27D12<<70>>
+    \definecolor<<71>>ansi-blue<<71>><<72>>HTML<<72>><<73>>208FFB<<73>>
+    \definecolor<<74>>ansi-blue-intense<<74>><<75>>HTML<<75>><<76>>0065CA<<76>>
+    \definecolor<<77>>ansi-magenta<<77>><<78>>HTML<<78>><<79>>D160C4<<79>>
+    \definecolor<<80>>ansi-magenta-intense<<80>><<81>>HTML<<81>><<82>>A03196<<82>>
+    \definecolor<<83>>ansi-cyan<<83>><<84>>HTML<<84>><<85>>60C6C8<<85>>
+    \definecolor<<86>>ansi-cyan-intense<<86>><<87>>HTML<<87>><<88>>258F8F<<88>>
+    \definecolor<<89>>ansi-white<<89>><<90>>HTML<<90>><<91>>C5C1B4<<91>>
+    \definecolor<<92>>ansi-white-intense<<92>><<93>>HTML<<93>><<94>>A1A6B2<<94>>
+    \definecolor<<95>>ansi-default-inverse-fg<<95>><<96>>HTML<<96>><<97>>FFFFFF<<97>>
+    \definecolor<<98>>ansi-default-inverse-bg<<98>><<99>>HTML<<99>><<100>>000000<<100>>
+\begin<<1375>>tex2html_deferred<<1375>>\par\end<<1376>>tex2html_deferred<<1376>>
+\begin<<1377>>tex2html_deferred<<1377>>\providedcommand<<101>>tightlist<<101>><<680>><tex2html_comment_mark>16
+\setlength<<102>>\itemsep<<102>><<103>>0pt<<103>>\setlength<<104>>\parskip<<104>><<105>>0pt<<105>><<680>>\end<<1378>>tex2html_deferred<<1378>>
+    \DefineVerbatimEnvironment<<106>>Highlighting<<106>><<107>>Verbatim<<107>><<108>>commandchars=\\ \{\}<<108>>
+    <tex2html_comment_mark>17
+\begin<<1379>>tex2html_nowrap<<1379>>
+\newedenvironment<<109>>Shaded<<109>><<110>><<110>><<111>><<111>>\end<<1380>>tex2html_nowrap<<1380>> 
+    \begin<<1381>>tex2html_nowrap<<1381>>
+\newedcommand<<112>>KeywordTok<<112>>[1]<<942>>\textcolor[rgb]<<113>>0.00,0.44,0.13<<113>><<839>>\textbf<<681>><<114>>#1<<114>><<681>><<839>><<942>>\end<<1382>>tex2html_nowrap<<1382>> 
+    \begin<<1383>>tex2html_nowrap<<1383>>
+\newedcommand<<115>>DataTypeTok<<115>>[1]<<840>>\textcolor[rgb]<<116>>0.56,0.13,0.00<<116>><<682>><<117>>#1<<117>><<682>><<840>>\end<<1384>>tex2html_nowrap<<1384>> 
+    \begin<<1385>>tex2html_nowrap<<1385>>
+\newedcommand<<118>>DecValTok<<118>>[1]<<841>>\textcolor[rgb]<<119>>0.25,0.63,0.44<<119>><<683>><<120>>#1<<120>><<683>><<841>>\end<<1386>>tex2html_nowrap<<1386>> 
+    \begin<<1387>>tex2html_nowrap<<1387>>
+\newedcommand<<121>>BaseNTok<<121>>[1]<<842>>\textcolor[rgb]<<122>>0.25,0.63,0.44<<122>><<684>><<123>>#1<<123>><<684>><<842>>\end<<1388>>tex2html_nowrap<<1388>> 
+    \begin<<1389>>tex2html_nowrap<<1389>>
+\newedcommand<<124>>FloatTok<<124>>[1]<<843>>\textcolor[rgb]<<125>>0.25,0.63,0.44<<125>><<685>><<126>>#1<<126>><<685>><<843>>\end<<1390>>tex2html_nowrap<<1390>> 
+    \begin<<1391>>tex2html_nowrap<<1391>>
+\newedcommand<<127>>CharTok<<127>>[1]<<844>>\textcolor[rgb]<<128>>0.25,0.44,0.63<<128>><<686>><<129>>#1<<129>><<686>><<844>>\end<<1392>>tex2html_nowrap<<1392>> 
+    \begin<<1393>>tex2html_nowrap<<1393>>
+\newedcommand<<130>>StringTok<<130>>[1]<<845>>\textcolor[rgb]<<131>>0.25,0.44,0.63<<131>><<687>><<132>>#1<<132>><<687>><<845>>\end<<1394>>tex2html_nowrap<<1394>> 
+    \begin<<1395>>tex2html_nowrap<<1395>>
+\newedcommand<<133>>CommentTok<<133>>[1]<<943>>\textcolor[rgb]<<134>>0.38,0.63,0.69<<134>><<846>>\textit<<688>><<135>>#1<<135>><<688>><<846>><<943>>\end<<1396>>tex2html_nowrap<<1396>> 
+    \begin<<1397>>tex2html_nowrap<<1397>>
+\newedcommand<<136>>OtherTok<<136>>[1]<<847>>\textcolor[rgb]<<137>>0.00,0.44,0.13<<137>><<689>><<138>>#1<<138>><<689>><<847>>\end<<1398>>tex2html_nowrap<<1398>> 
+    \begin<<1399>>tex2html_nowrap<<1399>>
+\newedcommand<<139>>AlertTok<<139>>[1]<<944>>\textcolor[rgb]<<140>>1.00,0.00,0.00<<140>><<848>>\textbf<<690>><<141>>#1<<141>><<690>><<848>><<944>>\end<<1400>>tex2html_nowrap<<1400>> 
+    \begin<<1401>>tex2html_nowrap<<1401>>
+\newedcommand<<142>>FunctionTok<<142>>[1]<<849>>\textcolor[rgb]<<143>>0.02,0.16,0.49<<143>><<691>><<144>>#1<<144>><<691>><<849>>\end<<1402>>tex2html_nowrap<<1402>> 
+    \begin<<1403>>tex2html_nowrap<<1403>>
+\newedcommand<<145>>RegionMarkerTok<<145>>[1]<<692>><<146>>#1<<146>><<692>>\end<<1404>>tex2html_nowrap<<1404>> 
+    \begin<<1405>>tex2html_nowrap<<1405>>
+\newedcommand<<147>>ErrorTok<<147>>[1]<<945>>\textcolor[rgb]<<148>>1.00,0.00,0.00<<148>><<850>>\textbf<<693>><<149>>#1<<149>><<693>><<850>><<945>>\end<<1406>>tex2html_nowrap<<1406>> 
+    \begin<<1407>>tex2html_nowrap<<1407>>
+\newedcommand<<150>>NormalTok<<150>>[1]<<694>><<151>>#1<<151>><<694>>\end<<1408>>tex2html_nowrap<<1408>> 
+\begin<<1409>>tex2html_deferred<<1409>>\par\end<<1410>>tex2html_deferred<<1410>>
+\begin<<1411>>tex2html_nowrap<<1411>>
+\newedcommand<<152>>ConstantTok<<152>>[1]<<851>>\textcolor[rgb]<<153>>0.53,0.00,0.00<<153>><<695>><<154>>#1<<154>><<695>><<851>>\end<<1412>>tex2html_nowrap<<1412>> 
+    \begin<<1413>>tex2html_nowrap<<1413>>
+\newedcommand<<155>>SpecialCharTok<<155>>[1]<<852>>\textcolor[rgb]<<156>>0.25,0.44,0.63<<156>><<696>><<157>>#1<<157>><<696>><<852>>\end<<1414>>tex2html_nowrap<<1414>> 
+    \begin<<1415>>tex2html_nowrap<<1415>>
+\newedcommand<<158>>VerbatimStringTok<<158>>[1]<<853>>\textcolor[rgb]<<159>>0.25,0.44,0.63<<159>><<697>><<160>>#1<<160>><<697>><<853>>\end<<1416>>tex2html_nowrap<<1416>> 
+    \begin<<1417>>tex2html_nowrap<<1417>>
+\newedcommand<<161>>SpecialStringTok<<161>>[1]<<854>>\textcolor[rgb]<<162>>0.73,0.40,0.53<<162>><<698>><<163>>#1<<163>><<698>><<854>>\end<<1418>>tex2html_nowrap<<1418>> 
+    \begin<<1419>>tex2html_nowrap<<1419>>
+\newedcommand<<164>>ImportTok<<164>>[1]<<699>><<165>>#1<<165>><<699>>\end<<1420>>tex2html_nowrap<<1420>> 
+    \begin<<1421>>tex2html_nowrap<<1421>>
+\newedcommand<<166>>DocumentationTok<<166>>[1]<<946>>\textcolor[rgb]<<167>>0.73,0.13,0.13<<167>><<855>>\textit<<700>><<168>>#1<<168>><<700>><<855>><<946>>\end<<1422>>tex2html_nowrap<<1422>> 
+    \begin<<1423>>tex2html_nowrap<<1423>>
+\newedcommand<<169>>AnnotationTok<<169>>[1]<<955>>\textcolor[rgb]<<170>>0.38,0.63,0.69<<170>><<947>>\textbf<<856>>\textit<<701>><<171>>#1<<171>><<701>><<856>><<947>><<955>>\end<<1424>>tex2html_nowrap<<1424>> 
+    \begin<<1425>>tex2html_nowrap<<1425>>
+\newedcommand<<172>>CommentVarTok<<172>>[1]<<956>>\textcolor[rgb]<<173>>0.38,0.63,0.69<<173>><<948>>\textbf<<857>>\textit<<702>><<174>>#1<<174>><<702>><<857>><<948>><<956>>\end<<1426>>tex2html_nowrap<<1426>> 
+    \begin<<1427>>tex2html_nowrap<<1427>>
+\newedcommand<<175>>VariableTok<<175>>[1]<<858>>\textcolor[rgb]<<176>>0.10,0.09,0.49<<176>><<703>><<177>>#1<<177>><<703>><<858>>\end<<1428>>tex2html_nowrap<<1428>> 
+    \begin<<1429>>tex2html_nowrap<<1429>>
+\newedcommand<<178>>ControlFlowTok<<178>>[1]<<949>>\textcolor[rgb]<<179>>0.00,0.44,0.13<<179>><<859>>\textbf<<704>><<180>>#1<<180>><<704>><<859>><<949>>\end<<1430>>tex2html_nowrap<<1430>> 
+    \begin<<1431>>tex2html_nowrap<<1431>>
+\newedcommand<<181>>OperatorTok<<181>>[1]<<860>>\textcolor[rgb]<<182>>0.40,0.40,0.40<<182>><<705>><<183>>#1<<183>><<705>><<860>>\end<<1432>>tex2html_nowrap<<1432>> 
+    \begin<<1433>>tex2html_nowrap<<1433>>
+\newedcommand<<184>>BuiltInTok<<184>>[1]<<706>><<185>>#1<<185>><<706>>\end<<1434>>tex2html_nowrap<<1434>> 
+    \begin<<1435>>tex2html_nowrap<<1435>>
+\newedcommand<<186>>ExtensionTok<<186>>[1]<<707>><<187>>#1<<187>><<707>>\end<<1436>>tex2html_nowrap<<1436>> 
+    \begin<<1437>>tex2html_nowrap<<1437>>
+\newedcommand<<188>>PreprocessorTok<<188>>[1]<<861>>\textcolor[rgb]<<189>>0.74,0.48,0.00<<189>><<708>><<190>>#1<<190>><<708>><<861>>\end<<1438>>tex2html_nowrap<<1438>> 
+    \begin<<1439>>tex2html_nowrap<<1439>>
+\newedcommand<<191>>AttributeTok<<191>>[1]<<862>>\textcolor[rgb]<<192>>0.49,0.56,0.16<<192>><<709>><<193>>#1<<193>><<709>><<862>>\end<<1440>>tex2html_nowrap<<1440>> 
+    \begin<<1441>>tex2html_nowrap<<1441>>
+\newedcommand<<194>>InformationTok<<194>>[1]<<957>>\textcolor[rgb]<<195>>0.38,0.63,0.69<<195>><<950>>\textbf<<863>>\textit<<710>><<196>>#1<<196>><<710>><<863>><<950>><<957>>\end<<1442>>tex2html_nowrap<<1442>> 
+    \begin<<1443>>tex2html_nowrap<<1443>>
+\newedcommand<<197>>WarningTok<<197>>[1]<<958>>\textcolor[rgb]<<198>>0.38,0.63,0.69<<198>><<951>>\textbf<<864>>\textit<<711>><<199>>#1<<199>><<711>><<864>><<951>><<958>>\end<<1444>>tex2html_nowrap<<1444>> 
+\begin<<1445>>tex2html_deferred<<1445>>\par\end<<1446>>tex2html_deferred<<1446>>
+<tex2html_comment_mark>20
+
+    
+    \let\Oldtex\begin<<1447>>tex2html_deferred<<1447>>\TeX\end<<1448>>tex2html_deferred<<1448>>\let\Oldlatex\begin<<1449>>tex2html_deferred<<1449>>\LaTeX\end<<1450>>tex2html_deferred<<1450>>\begin<<1451>>tex2html_deferred<<1451>>\renewedcommand<<203>>TeX<<203>><<713>>\textrm<<204>>\Oldtex<<204>><<713>>\end<<1452>>tex2html_deferred<<1452>>
+    \begin<<1453>>tex2html_deferred<<1453>>\renewedcommand<<205>>LaTeX<<205>><<714>>\textrm<<206>>\Oldlatex<<206>><<714>>\end<<1454>>tex2html_deferred<<1454>>
+    <tex2html_comment_mark>21
+\title<<207>>Evaluation\_Metrices<<207>>
+\begin<<1455>>tex2html_deferred<<1455>>\par\end<<1456>>tex2html_deferred<<1456>>
+\makeatletter
+
+
+
+
+
+\begin<<1457>>tex2html_deferred<<1457>>\par\end<<1458>>tex2html_deferred<<1458>>
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\expandafter
+\begin<<1459>>tex2html_deferred<<1459>>\par\end<<1460>>tex2html_deferred<<1460>>
+\makeatother
+\begin<<1461>>tex2html_deferred<<1461>>\par\end<<1462>>tex2html_deferred<<1462>>
+\makeatletter
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \begin<<1463>>tex2html_nowrap<<1463>>
+\newedcommand<<962>>Wrappedvisiblespace<<962>><<783>>\textcolor<<366>>red<<366>><<367>>\textvisiblespace<<367>><<783>>\end<<1464>>tex2html_nowrap<<1464>>  
+        \begin<<1465>>tex2html_nowrap<<1465>>
+\newedcommand<<963>>Wrappedcontinuationsymbol<<963>><<931>>\textcolor<<368>>red<<368>><<784>>\llap<<369>>\tiny\begin<<1355>>tex2html_wrap_inline<<1355>>$\m@th\hookrightarrow$\end<<1356>>tex2html_wrap_inline<<1356>><<369>><<784>><<931>>\end<<1466>>tex2html_nowrap<<1466>>  
+        \begin<<1467>>tex2html_nowrap<<1467>>
+\newedcommand<<964>>Wrappedcontinuationindent<<964>><<370>>3ex <<370>>\end<<1468>>tex2html_nowrap<<1468>>  
+        \begin<<1469>>tex2html_nowrap<<1469>>
+\newedcommand<<965>>Wrappedafterbreak<<965>><<371>>\kern3ex \copy\Wrappedcontinuationbox<<371>>\end<<1470>>tex2html_nowrap<<1470>>  
+        <tex2html_comment_mark>29
+\begin<<1471>>tex2html_nowrap<<1471>>
+\newedcommand<<966>>Wrappedbreaksatspecials<<966>><<932>><tex2html_comment_mark>32
+\def \PYGZus<<785>>\discretionary<<372>>\char`\_<<372>><<373>>\kern3ex \copy\Wrappedcontinuationbox <<373>><<374>>\char`\_<<374>><<785>><tex2html_comment_mark>33
+\def \PYGZob<<786>>\discretionary<<375>><<375>><<376>>\kern3ex \copy\Wrappedcontinuationbox \char`\{<<376>><<377>>\char`\{<<377>><<786>><tex2html_comment_mark>34
+\def \PYGZcb<<787>>\discretionary<<378>>\char`\}<<378>><<379>>\kern3ex \copy\Wrappedcontinuationbox <<379>><<380>>\char`\}<<380>><<787>><tex2html_comment_mark>35
+\def \PYGZca<<788>>\discretionary<<381>>\char`\^<<381>><<382>>\kern3ex \copy\Wrappedcontinuationbox <<382>><<383>>\char`\^<<383>><<788>><tex2html_comment_mark>36
+\def \PYGZam<<789>>\discretionary<<384>>\char`\&<<384>><<385>>\kern3ex \copy\Wrappedcontinuationbox <<385>><<386>>\char`\&<<386>><<789>><tex2html_comment_mark>37
+\def \PYGZlt<<790>>\discretionary<<387>><<387>><<388>>\kern3ex \copy\Wrappedcontinuationbox \char`\<<<388>><<389>>\char`\<<<389>><<790>><tex2html_comment_mark>38
+\def \PYGZgt<<791>>\discretionary<<390>>\char`\><<390>><<391>>\kern3ex \copy\Wrappedcontinuationbox <<391>><<392>>\char`\><<392>><<791>><tex2html_comment_mark>39
+\def \PYGZsh<<792>>\discretionary<<393>><<393>><<394>>\kern3ex \copy\Wrappedcontinuationbox \char`\#<<394>><<395>>\char`\#<<395>><<792>><tex2html_comment_mark>40
+\def \PYGZpc<<793>>\discretionary<<396>><<396>><<397>>\kern3ex \copy\Wrappedcontinuationbox \char`\%<<397>><<398>>\char`\%<<398>><<793>><tex2html_comment_mark>41
+\def \PYGZdl<<794>>\discretionary<<399>><<399>><<400>>\kern3ex \copy\Wrappedcontinuationbox \char`\$<<400>><<401>>\char`\$<<401>><<794>><tex2html_comment_mark>42
+\def \PYGZhy<<795>>\discretionary<<402>>\char`\-<<402>><<403>>\kern3ex \copy\Wrappedcontinuationbox <<403>><<404>>\char`\-<<404>><<795>><tex2html_comment_mark>43
+\def \PYGZsq<<796>>\discretionary<<405>><<405>><<406>>\kern3ex \copy\Wrappedcontinuationbox \textquotesingle<<406>><<407>>\textquotesingle<<407>><<796>><tex2html_comment_mark>44
+\def \PYGZdq<<797>>\discretionary<<408>><<408>><<409>>\kern3ex \copy\Wrappedcontinuationbox \char`\"<<409>><<410>>\char`\"<<410>><<797>><tex2html_comment_mark>45
+\def \PYGZti<<798>>\discretionary<<411>>\char`\~<<411>><<412>>\kern3ex \copy\Wrappedcontinuationbox <<412>><<413>>\char`\~<<413>><<798>><tex2html_comment_mark>46
+<<932>>\end<<1472>>tex2html_nowrap<<1472>>  
+        <tex2html_comment_mark>47
+\begin<<1473>>tex2html_nowrap<<1473>>
+\newedcommand<<967>>Wrappedbreaksatpunct<<967>><<953>><tex2html_comment_mark>48
+\lccode`\~`\.\lowercase<<414>>\def ~<<414>><<933>>\discretionary<<799>>\hbox<<415>>\char`\.<<415>><<799>><<416>>\kern3ex \copy\Wrappedcontinuationbox <<416>><<800>>\hbox<<417>>\char`\.<<417>><<800>><<933>><tex2html_comment_mark>49
+\lccode`\~`\,\lowercase<<418>>\def ~<<418>><<934>>\discretionary<<801>>\hbox<<419>>\char`\,<<419>><<801>><<420>>\kern3ex \copy\Wrappedcontinuationbox <<420>><<802>>\hbox<<421>>\char`\,<<421>><<802>><<934>><tex2html_comment_mark>50
+\lccode`\~`\;\lowercase<<422>>\def ~<<422>><<935>>\discretionary<<803>>\hbox<<423>>\char`\;<<423>><<803>><<424>>\kern3ex \copy\Wrappedcontinuationbox <<424>><<804>>\hbox<<425>>\char`\;<<425>><<804>><<935>><tex2html_comment_mark>51
+\lccode`\~`\:\lowercase<<426>>\def ~<<426>><<936>>\discretionary<<805>>\hbox<<427>>\char`\:<<427>><<805>><<428>>\kern3ex \copy\Wrappedcontinuationbox <<428>><<806>>\hbox<<429>>\char`\:<<429>><<806>><<936>><tex2html_comment_mark>52
+\lccode`\~`\?\lowercase<<430>>\def ~<<430>><<937>>\discretionary<<807>>\hbox<<431>>\char`\?<<431>><<807>><<432>>\kern3ex \copy\Wrappedcontinuationbox <<432>><<808>>\hbox<<433>>\char`\?<<433>><<808>><<937>><tex2html_comment_mark>53
+\lccode`\~`\!\lowercase<<434>>\def ~<<434>><<938>>\discretionary<<809>>\hbox<<435>>\char`\!<<435>><<809>><<436>>\kern3ex \copy\Wrappedcontinuationbox <<436>><<810>>\hbox<<437>>\char`\!<<437>><<810>><<938>><tex2html_comment_mark>54
+\lccode`\~`\/\lowercase<<438>>\def ~<<438>><<939>>\discretionary<<811>>\hbox<<439>>\char`\/<<439>><<811>><<440>>\kern3ex \copy\Wrappedcontinuationbox <<440>><<812>>\hbox<<441>>\char`\/<<441>><<812>><<939>><tex2html_comment_mark>55
+\catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        <<953>>\end<<1474>>tex2html_nowrap<<1474>> 
+    \makeatother
+\begin<<1475>>tex2html_deferred<<1475>>\par\end<<1476>>tex2html_deferred<<1476>>
+\let\OriginalVerbatim=\begin<<1477>>tex2html_nowrap<<1477>>
+\sbox\end<<1478>>tex2html_nowrap<<1478>> \Wrappedcontinuationbox <<1083>>\begin<<1479>>tex2html_deferred<<1479>>\textcolor<<1115>>red<<1115>><<1116>>\llap<<1186>>\tiny\begin<<1357>>tex2html_wrap_inline<<1357>>$\m@th\hookrightarrow$\end<<1358>>tex2html_wrap_inline<<1358>><<1186>><<1116>>\end<<1480>>tex2html_deferred<<1480>><<1083>>\begin<<1481>>tex2html_nowrap<<1481>>
+\sbox\end<<1482>>tex2html_nowrap<<1482>> \Wrappedvisiblespacebox <<1084>>\FV@SetupFont\begin<<1483>>tex2html_deferred<<1483>>\textcolor<<1117>>red<<1117>><<1118>>\textvisiblespace<<1118>>\end<<1484>>tex2html_deferred<<1484>><<1084>>\def \FancyVerbFormatLine #1<<1085>>\hsize\linewidth
+            \vtop<<1119>>\begin<<1485>>tex2html_deferred<<1485>>\raggedright\end<<1486>>tex2html_deferred<<1486>>\begin<<1487>>tex2html_nowrap<<1487>>
+\hyphenpenalty\end<<1488>>tex2html_nowrap<<1488>> \z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut #1\strut<<1119>><<1085>>\def \FV@Space <<1086>>\nobreak\hskip\z@ plus\fontdimen3\begin<<1489>>tex2html_deferred<<1489>>\font minus\fontdimen4\font
+\end<<1490>>tex2html_deferred<<1490>>            \discretionary<<1120>>\copy\Wrappedvisiblespacebox<<1120>><<1121>>\kern3ex \copy\Wrappedcontinuationbox <<1121>>
+            <<1122>>\kern\fontdimen2\begin<<1491>>tex2html_deferred<<1491>>\font<<1122>><<1086>>\par 
+\end<<1492>>tex2html_deferred<<1492>>\def \PYGZus<<1087>>\discretionary<<1123>>\char`\_<<1123>><<1124>>\kern3ex \copy\Wrappedcontinuationbox <<1124>><<1125>>\char`\_<<1125>><<1087>>\def \PYGZob<<1088>>\discretionary<<1126>><<1126>><<1127>>\kern3ex \copy\Wrappedcontinuationbox \char`\{<<1127>><<1128>>\char`\{<<1128>><<1088>>\def \PYGZcb<<1089>>\discretionary<<1129>>\char`\}<<1129>><<1130>>\kern3ex \copy\Wrappedcontinuationbox <<1130>><<1131>>\char`\}<<1131>><<1089>>\def \PYGZca<<1090>>\discretionary<<1132>>\char`\^<<1132>><<1133>>\kern3ex \copy\Wrappedcontinuationbox <<1133>><<1134>>\char`\^<<1134>><<1090>>\def \PYGZam<<1091>>\discretionary<<1135>>\char`\&<<1135>><<1136>>\kern3ex \copy\Wrappedcontinuationbox <<1136>><<1137>>\char`\&<<1137>><<1091>>\def \PYGZlt<<1092>>\discretionary<<1138>><<1138>><<1139>>\kern3ex \copy\Wrappedcontinuationbox \char`\<<<1139>><<1140>>\char`\<<<1140>><<1092>>\def \PYGZgt<<1093>>\discretionary<<1141>>\char`\><<1141>><<1142>>\kern3ex \copy\Wrappedcontinuationbox <<1142>><<1143>>\char`\><<1143>><<1093>>\def \PYGZsh<<1094>>\discretionary<<1144>><<1144>><<1145>>\kern3ex \copy\Wrappedcontinuationbox \char`\#<<1145>><<1146>>\char`\#<<1146>><<1094>>\def \PYGZpc<<1095>>\discretionary<<1147>><<1147>><<1148>>\kern3ex \copy\Wrappedcontinuationbox \char`\%<<1148>><<1149>>\char`\%<<1149>><<1095>>\def \PYGZdl<<1096>>\discretionary<<1150>><<1150>><<1151>>\kern3ex \copy\Wrappedcontinuationbox \char`\$<<1151>><<1152>>\char`\$<<1152>><<1096>>\def \PYGZhy<<1097>>\discretionary<<1153>>\char`\-<<1153>><<1154>>\kern3ex \copy\Wrappedcontinuationbox <<1154>><<1155>>\char`\-<<1155>><<1097>>\def \PYGZsq<<1098>>\discretionary<<1156>><<1156>><<1157>>\kern3ex \copy\Wrappedcontinuationbox \textquotesingle<<1157>><<1158>>\textquotesingle<<1158>><<1098>>\def \PYGZdq<<1099>>\discretionary<<1159>><<1159>><<1160>>\kern3ex \copy\Wrappedcontinuationbox \char`\"<<1160>><<1161>>\char`\"<<1161>><<1099>>\def \PYGZti<<1100>>\discretionary<<1162>>\char`\~<<1162>><<1163>>\kern3ex \copy\Wrappedcontinuationbox <<1163>><<1164>>\char`\~<<1164>><<1100>>
+        \OriginalVerbatim[1,codes*=\lccode`\~`\.\begin<<1493>>tex2html_deferred<<1493>>\lowercase<<1101>>\def ~<<1101>>\end<<1494>>tex2html_deferred<<1494>><<1102>>\discretionary<<1165>>\hbox<<1187>>\char`\.<<1187>><<1165>><<1166>>\kern3ex \copy\Wrappedcontinuationbox <<1166>><<1167>>\hbox<<1188>>\char`\.<<1188>><<1167>><<1102>>\lccode`\~`\,\begin<<1495>>tex2html_deferred<<1495>>\lowercase<<1103>>\def ~<<1103>>\end<<1496>>tex2html_deferred<<1496>><<1104>>\discretionary<<1168>>\hbox<<1189>>\char`\,<<1189>><<1168>><<1169>>\kern3ex \copy\Wrappedcontinuationbox <<1169>><<1170>>\hbox<<1190>>\char`\,<<1190>><<1170>><<1104>>\lccode`\~`\;\begin<<1497>>tex2html_deferred<<1497>>\lowercase<<1105>>\def ~<<1105>>\end<<1498>>tex2html_deferred<<1498>><<1106>>\discretionary<<1171>>\hbox<<1191>>\char`\;<<1191>><<1171>><<1172>>\kern3ex \copy\Wrappedcontinuationbox <<1172>><<1173>>\hbox<<1192>>\char`\;<<1192>><<1173>><<1106>>\lccode`\~`\:\begin<<1499>>tex2html_deferred<<1499>>\lowercase<<1107>>\def ~<<1107>>\end<<1500>>tex2html_deferred<<1500>><<1108>>\discretionary<<1174>>\hbox<<1193>>\char`\:<<1193>><<1174>><<1175>>\kern3ex \copy\Wrappedcontinuationbox <<1175>><<1176>>\hbox<<1194>>\char`\:<<1194>><<1176>><<1108>>\lccode`\~`\?\begin<<1501>>tex2html_deferred<<1501>>\lowercase<<1109>>\def ~<<1109>>\end<<1502>>tex2html_deferred<<1502>><<1110>>\discretionary<<1177>>\hbox<<1195>>\char`\?<<1195>><<1177>><<1178>>\kern3ex \copy\Wrappedcontinuationbox <<1178>><<1179>>\hbox<<1196>>\char`\?<<1196>><<1179>><<1110>>\lccode`\~`\!\begin<<1503>>tex2html_deferred<<1503>>\lowercase<<1111>>\def ~<<1111>>\end<<1504>>tex2html_deferred<<1504>><<1112>>\discretionary<<1180>>\hbox<<1197>>\char`\!<<1197>><<1180>><<1181>>\kern3ex \copy\Wrappedcontinuationbox <<1181>><<1182>>\hbox<<1198>>\char`\!<<1198>><<1182>><<1112>>\lccode`\~`\/\begin<<1505>>tex2html_deferred<<1505>>\lowercase<<1113>>\def ~<<1113>>\end<<1506>>tex2html_deferred<<1506>><<1114>>\discretionary<<1183>>\hbox<<1199>>\char`\/<<1199>><<1183>><<1184>>\kern3ex \copy\Wrappedcontinuationbox <<1184>><<1185>>\hbox<<1200>>\char`\/<<1200>><<1185>><<1114>>\catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        ]
+    \makeatletter
+    \begin<<1507>>tex2html_deferred<<1507>>\renewedcommand<<442>>Verbatim<<442>>[1][1]<<940>><tex2html_comment_mark>56
+\sbox\Wrappedcontinuationbox <<443>>\textcolor<<1201>>red<<1201>><<1202>>\llap<<1203>>\tiny\begin<<1359>>tex2html_wrap_inline<<1359>>$\m@th\hookrightarrow$\end<<1360>>tex2html_wrap_inline<<1360>><<1203>><<1202>><<443>><tex2html_comment_mark>57
+\sbox\Wrappedvisiblespacebox <<444>>\FV@SetupFont\textcolor<<1204>>red<<1204>><<1205>>\textvisiblespace<<1205>><<444>><tex2html_comment_mark>58
+\def \FancyVerbFormatLine ##1<<813>>\hsize\linewidth
+            \vtop<<445>>\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut<<445>><tex2html_comment_mark>59
+<<813>><tex2html_comment_mark>60
+\def \FV@Space <<814>><tex2html_comment_mark>62
+\nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary<<446>>\copy\Wrappedvisiblespacebox<<446>><<447>>\kern3ex \copy\Wrappedcontinuationbox <<447>>
+            <<448>>\kern\fontdimen2\font<<448>><tex2html_comment_mark>63
+<<814>><tex2html_comment_mark>64
+\par
+\def \PYGZus<<1206>>\discretionary<<1220>>\char`\_<<1220>><<1221>>\kern3ex \copy\Wrappedcontinuationbox <<1221>><<1222>>\char`\_<<1222>><<1206>>\def \PYGZob<<1207>>\discretionary<<1223>><<1223>><<1224>>\kern3ex \copy\Wrappedcontinuationbox \char`\{<<1224>><<1225>>\char`\{<<1225>><<1207>>\def \PYGZcb<<1208>>\discretionary<<1226>>\char`\}<<1226>><<1227>>\kern3ex \copy\Wrappedcontinuationbox <<1227>><<1228>>\char`\}<<1228>><<1208>>\def \PYGZca<<1209>>\discretionary<<1229>>\char`\^<<1229>><<1230>>\kern3ex \copy\Wrappedcontinuationbox <<1230>><<1231>>\char`\^<<1231>><<1209>>\def \PYGZam<<1210>>\discretionary<<1232>>\char`\&<<1232>><<1233>>\kern3ex \copy\Wrappedcontinuationbox <<1233>><<1234>>\char`\&<<1234>><<1210>>\def \PYGZlt<<1211>>\discretionary<<1235>><<1235>><<1236>>\kern3ex \copy\Wrappedcontinuationbox \char`\<<<1236>><<1237>>\char`\<<<1237>><<1211>>\def \PYGZgt<<1212>>\discretionary<<1238>>\char`\><<1238>><<1239>>\kern3ex \copy\Wrappedcontinuationbox <<1239>><<1240>>\char`\><<1240>><<1212>>\def \PYGZsh<<1213>>\discretionary<<1241>><<1241>><<1242>>\kern3ex \copy\Wrappedcontinuationbox \char`\#<<1242>><<1243>>\char`\#<<1243>><<1213>>\def \PYGZpc<<1214>>\discretionary<<1244>><<1244>><<1245>>\kern3ex \copy\Wrappedcontinuationbox \char`\%<<1245>><<1246>>\char`\%<<1246>><<1214>>\def \PYGZdl<<1215>>\discretionary<<1247>><<1247>><<1248>>\kern3ex \copy\Wrappedcontinuationbox \char`\$<<1248>><<1249>>\char`\$<<1249>><<1215>>\def \PYGZhy<<1216>>\discretionary<<1250>>\char`\-<<1250>><<1251>>\kern3ex \copy\Wrappedcontinuationbox <<1251>><<1252>>\char`\-<<1252>><<1216>>\def \PYGZsq<<1217>>\discretionary<<1253>><<1253>><<1254>>\kern3ex \copy\Wrappedcontinuationbox \textquotesingle<<1254>><<1255>>\textquotesingle<<1255>><<1217>>\def \PYGZdq<<1218>>\discretionary<<1256>><<1256>><<1257>>\kern3ex \copy\Wrappedcontinuationbox \char`\"<<1257>><<1258>>\char`\"<<1258>><<1218>>\def \PYGZti<<1219>>\discretionary<<1259>>\char`\~<<1259>><<1260>>\kern3ex \copy\Wrappedcontinuationbox <<1260>><<1261>>\char`\~<<1261>><<1219>>
+        <tex2html_comment_mark>66
+\OriginalVerbatim[#1,codes*=\lccode`\~`\.\lowercase<<1262>>\def ~<<1262>><<1263>>\discretionary<<1276>>\hbox<<1297>>\char`\.<<1297>><<1276>><<1277>>\kern3ex \copy\Wrappedcontinuationbox <<1277>><<1278>>\hbox<<1298>>\char`\.<<1298>><<1278>><<1263>>\lccode`\~`\,\lowercase<<1264>>\def ~<<1264>><<1265>>\discretionary<<1279>>\hbox<<1299>>\char`\,<<1299>><<1279>><<1280>>\kern3ex \copy\Wrappedcontinuationbox <<1280>><<1281>>\hbox<<1300>>\char`\,<<1300>><<1281>><<1265>>\lccode`\~`\;\lowercase<<1266>>\def ~<<1266>><<1267>>\discretionary<<1282>>\hbox<<1301>>\char`\;<<1301>><<1282>><<1283>>\kern3ex \copy\Wrappedcontinuationbox <<1283>><<1284>>\hbox<<1302>>\char`\;<<1302>><<1284>><<1267>>\lccode`\~`\:\lowercase<<1268>>\def ~<<1268>><<1269>>\discretionary<<1285>>\hbox<<1303>>\char`\:<<1303>><<1285>><<1286>>\kern3ex \copy\Wrappedcontinuationbox <<1286>><<1287>>\hbox<<1304>>\char`\:<<1304>><<1287>><<1269>>\lccode`\~`\?\lowercase<<1270>>\def ~<<1270>><<1271>>\discretionary<<1288>>\hbox<<1305>>\char`\?<<1305>><<1288>><<1289>>\kern3ex \copy\Wrappedcontinuationbox <<1289>><<1290>>\hbox<<1306>>\char`\?<<1306>><<1290>><<1271>>\lccode`\~`\!\lowercase<<1272>>\def ~<<1272>><<1273>>\discretionary<<1291>>\hbox<<1307>>\char`\!<<1307>><<1291>><<1292>>\kern3ex \copy\Wrappedcontinuationbox <<1292>><<1293>>\hbox<<1308>>\char`\!<<1308>><<1293>><<1273>>\lccode`\~`\/\lowercase<<1274>>\def ~<<1274>><<1275>>\discretionary<<1294>>\hbox<<1309>>\char`\/<<1309>><<1294>><<1295>>\kern3ex \copy\Wrappedcontinuationbox <<1295>><<1296>>\hbox<<1310>>\char`\/<<1310>><<1296>><<1275>>\catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        ]<tex2html_comment_mark>67
+<<940>>\end<<1508>>tex2html_deferred<<1508>>
+    \makeatother
+\begin<<1509>>tex2html_deferred<<1509>>\par\end<<1510>>tex2html_deferred<<1510>>
+\definecolor<<449>>incolor<<449>><<450>>HTML<<450>><<451>>303F9F<<451>>
+    \definecolor<<452>>outcolor<<452>><<453>>HTML<<453>><<454>>D84315<<454>>
+    \definecolor<<455>>cellborder<<455>><<456>>HTML<<456>><<457>>CFCFCF<<457>>
+    \definecolor<<458>>cellbackground<<458>><<459>>HTML<<459>><<460>>F7F7F7<<460>>
+\begin<<1511>>tex2html_deferred<<1511>>\par\end<<1512>>tex2html_deferred<<1512>>
+\makeatletter
+    \begin<<1513>>tex2html_nowrap<<1513>>
+\newedcommand<<461>>boxspacing<<461>><<462>>\kern\kvtcb@left@rule\kern\kvtcb@boxsep<<462>>\end<<1514>>tex2html_nowrap<<1514>> 
+    \makeatother
+    \begin<<1515>>tex2html_nowrap<<1515>>
+\newedcommand<<463>>prompt<<463>>[4]<<954>>
+        \ttfamily\llap<<941>><<815>>\color<<464>>#2<<464>>[#3]:\hspace<<465>>3pt<<465>>#4<<815>><<941>>\vspace<<466>>-\baselineskip<<466>>
+    <<954>>\end<<1516>>tex2html_nowrap<<1516>> 
+\begin<<1517>>tex2html_deferred<<1517>>\par\end<<1518>>tex2html_deferred<<1518>>
+\sloppy 
+    <tex2html_comment_mark>71
+\hypersetup<<467>>
+      breaklinks=true,  <tex2html_comment_mark>72
+colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      <<467>>
+    <tex2html_comment_mark>73
+\begin<<1519>>tex2html_deferred<<1519>>\par\end<<1520>>tex2html_deferred<<1520>>
+\geometry<<468>>verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in<<468>>
+\begin<<1521>>tex2html_deferred<<1521>>\par\end<<1522>>tex2html_deferred<<1522>>
+\begin<<1523>>tex2html_deferred<<1523>>\setcounter<<469>>secnumdepth<<469>><<470>>0<<470>>\end<<1524>>tex2html_deferred<<1524>>
+\begin<<471>>document<<471>>
+\begin<<1525>>tex2html_deferred<<1525>>\par\end<<1526>>tex2html_deferred<<1526>>
+\maketitle
+\begin<<1527>>tex2html_deferred<<1527>>\par\end<<1528>>tex2html_deferred<<1528>>
+\hypertarget<<472>>coding-assignment-5<<472>><<816>><tex2html_comment_mark>74
+\section<<473>>Coding Assignment 5<<473>>\label<<474>>coding-assignment-5<<474>><<816>>
+\begin<<1529>>tex2html_deferred<<1529>>\par\end<<1530>>tex2html_deferred<<1530>>
+\begin<<475>>tex2html_preform<<475>><tex2html_verbatim_mark>verbatim85#\end<<476>>tex2html_preform<<476>>
+\begin<<1531>>tex2html_deferred<<1531>>\par\end<<1532>>tex2html_deferred<<1532>>
+Dataset: https://www.kaggle.com/uciml/pima-indians-diabetes-database
+\begin<<1533>>tex2html_deferred<<1533>>\par\end<<1534>>tex2html_deferred<<1534>>
+Ref: \href<<477>>https://www.youtube.com/watch?v=wpQiEHYkBys<<477>><<478>>Machine Learning
+Model Evaluation Metrics<<478>>
+\begin<<1535>>tex2html_deferred<<1535>>\par\end<<1536>>tex2html_deferred<<1536>>
+\begin<<479>>tcolorbox<<479>>[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+
+        \begin<<1537>>tex2html_deferred<<1537>>\ttfamily\end<<1538>>tex2html_deferred<<1538>>\llap<<1311>><<1313>>\begin<<1539>>tex2html_deferred<<1539>>\color<<1314>>incolor<<1314>>\end<<1540>>tex2html_deferred<<1540>>[72]:\hspace<<1315>>3pt<<1315>>\kern\kvtcb@left@rule\kern\kvtcb@boxsep<<1313>><<1311>>\vspace<<1312>>-\baselineskip<<1312>>
+    
+\begin<<484>>tex2html_preform<<484>><tex2html_verbatim_mark>Verbatim86#\end<<485>>tex2html_preform<<485>>
+\end<<486>>tcolorbox<<486>>
+\begin<<1541>>tex2html_deferred<<1541>>\par\end<<1542>>tex2html_deferred<<1542>>
+\begin<<487>>tex2html_preform<<487>><tex2html_verbatim_mark>Verbatim87#\end<<488>>tex2html_preform<<488>>
+\begin<<1543>>tex2html_deferred<<1543>>\par\end<<1544>>tex2html_deferred<<1544>>
+\hypertarget<<489>>loading-dataset-selecting-features<<489>><<817>><tex2html_comment_mark>75
+\subsection<<490>>5.0. Loading dataset \& Selecting
+features<<490>>\label<<491>>loading-dataset-selecting-features<<491>><<817>>
+\begin<<1545>>tex2html_deferred<<1545>>\par\end<<1546>>tex2html_deferred<<1546>>
+Previously, it was observed that the four features,
+\texttt<<492>>plasma\_glucose,\ serum\_insulin,\ bmi,\ diab\_pedigree<<492>> alone
+gave the best accuracy. We will work with these four features as our
+primary feature set in this notebook.
+\begin<<1547>>tex2html_deferred<<1547>>\par\end<<1548>>tex2html_deferred<<1548>>
+\begin<<493>>tcolorbox<<493>>[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+
+        \begin<<1549>>tex2html_deferred<<1549>>\ttfamily\end<<1550>>tex2html_deferred<<1550>>\llap<<1316>><<1318>>\begin<<1551>>tex2html_deferred<<1551>>\color<<1319>>incolor<<1319>>\end<<1552>>tex2html_deferred<<1552>>[4]:\hspace<<1320>>3pt<<1320>>\kern\kvtcb@left@rule\kern\kvtcb@boxsep<<1318>><<1316>>\vspace<<1317>>-\baselineskip<<1317>>
+    
+\begin<<498>>tex2html_preform<<498>><tex2html_verbatim_mark>Verbatim88#\end<<499>>tex2html_preform<<499>>
+\end<<500>>tcolorbox<<500>>
+\begin<<1553>>tex2html_deferred<<1553>>\par\end<<1554>>tex2html_deferred<<1554>>
+\begin<<501>>tex2html_preform<<501>><tex2html_verbatim_mark>Verbatim89#\end<<502>>tex2html_preform<<502>>
+\begin<<1555>>tex2html_deferred<<1555>>\par\end<<1556>>tex2html_deferred<<1556>>
+\hypertarget<<503>>checking-the-extent-of-class-imbalance<<503>><<818>><tex2html_comment_mark>76
+\paragraph<<504>>Checking the extent of class
+imbalance<<504>>\label<<505>>checking-the-extent-of-class-imbalance<<505>><<818>>
+\begin<<1557>>tex2html_deferred<<1557>>\par\end<<1558>>tex2html_deferred<<1558>>
+We note that there is slight inbalance
+\texttt<<819>>\textasciitilde<<506>><<506>>\ 35:65<<819>>, which is not terribly bad. However,
+this dataset is from a population that has a high prelavance of type 2
+diabetes (US-Pima Indians). For other populations the class inbalance
+can be \texttt<<820>>\textasciitilde<<507>><<507>>\ 10:90<<820>> (taking into account the global
+diabetes occurance).
+\begin<<1559>>tex2html_deferred<<1559>>\par\end<<1560>>tex2html_deferred<<1560>>
+Expected dummy score \textasciitilde<<508>><<508>> 0.65
+\begin<<1561>>tex2html_deferred<<1561>>\par\end<<1562>>tex2html_deferred<<1562>>
+\begin<<509>>tcolorbox<<509>>[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+
+        \begin<<1563>>tex2html_deferred<<1563>>\ttfamily\end<<1564>>tex2html_deferred<<1564>>\llap<<1321>><<1323>>\begin<<1565>>tex2html_deferred<<1565>>\color<<1324>>incolor<<1324>>\end<<1566>>tex2html_deferred<<1566>>[194]:\hspace<<1325>>3pt<<1325>>\kern\kvtcb@left@rule\kern\kvtcb@boxsep<<1323>><<1321>>\vspace<<1322>>-\baselineskip<<1322>>
+    
+\begin<<514>>tex2html_preform<<514>><tex2html_verbatim_mark>Verbatim90#\end<<515>>tex2html_preform<<515>>
+\end<<516>>tcolorbox<<516>>
+\begin<<1567>>tex2html_deferred<<1567>>\par\end<<1568>>tex2html_deferred<<1568>>
+\begin<<517>>tcolorbox<<517>>[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+
+        \begin<<1569>>tex2html_deferred<<1569>>\ttfamily\end<<1570>>tex2html_deferred<<1570>>\llap<<1326>><<1328>>\begin<<1571>>tex2html_deferred<<1571>>\color<<1329>>outcolor<<1329>>\end<<1572>>tex2html_deferred<<1572>>[194]:\hspace<<1330>>3pt<<1330>>\kern\kvtcb@left@rule\kern\kvtcb@boxsep<<1328>><<1326>>\vspace<<1327>>-\baselineskip<<1327>>
+    
+\begin<<522>>tex2html_preform<<522>><tex2html_verbatim_mark>Verbatim91#\end<<523>>tex2html_preform<<523>>
+\end<<524>>tcolorbox<<524>>
+\begin<<1573>>tex2html_deferred<<1573>>\par\end<<1574>>tex2html_deferred<<1574>>
+\hypertarget<<525>>evaluation-metrices<<525>><<821>><tex2html_comment_mark>77
+\subsection<<526>>5.1. Evaluation Metrices<<526>>\label<<527>>evaluation-metrices<<527>><<821>>
+\begin<<1575>>tex2html_deferred<<1575>>\par\end<<1576>>tex2html_deferred<<1576>>
+Evaluate metrices on the following models. \texttt<<528>>DC-4<<528>>:
+\texttt<<529>>DummyClassifier<<529>> on
+\texttt<<530>>plasma\_glucose,\ serum\_insulin,\ bmi,\ diab\_pedigree<<530>>
+(previous best feature set)
+\begin<<1577>>tex2html_deferred<<1577>>\par\end<<1578>>tex2html_deferred<<1578>>
+\texttt<<531>>LR-4<<531>>: \texttt<<532>>LogisticRegression<<532>> on
+\texttt<<533>>plasma\_glucose,\ serum\_insulin,\ bmi,\ diab\_pedigree<<533>>
+\begin<<1579>>tex2html_deferred<<1579>>\par\end<<1580>>tex2html_deferred<<1580>>
+\texttt<<534>>LR-4.3.a<<534>>: \texttt<<535>>LogisticRegression<<535>> on
+\texttt<<536>>age,\ \#preg,\ bmi<<536>>
+\begin<<1581>>tex2html_deferred<<1581>>\par\end<<1582>>tex2html_deferred<<1582>>
+\texttt<<537>>LR-4.3.b<<537>>: \texttt<<538>>LogisticRegression<<538>> on
+\texttt<<539>>skin\_th,\ diab\_pedigree,\ dia\_BP<<539>>
+\begin<<1583>>tex2html_deferred<<1583>>\par\end<<1584>>tex2html_deferred<<1584>>
+\texttt<<540>>LR-all<<540>>: \texttt<<541>>LogisticRegression<<541>> on \texttt<<542>>All\ features<<542>>
+\begin<<1585>>tex2html_deferred<<1585>>\par\end<<1586>>tex2html_deferred<<1586>>
+Since \texttt<<543>>DummyClassifier<<543>> with same \texttt<<544>>strategy<<544>> \&
+\texttt<<545>>train\_test\_split<<545>> have similar metrics, it was not tested on
+other feature sets for brevity.
+\begin<<1587>>tex2html_deferred<<1587>>\par\end<<1588>>tex2html_deferred<<1588>>
+\begin<<546>>tcolorbox<<546>>[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+
+        \begin<<1589>>tex2html_deferred<<1589>>\ttfamily\end<<1590>>tex2html_deferred<<1590>>\llap<<1331>><<1333>>\begin<<1591>>tex2html_deferred<<1591>>\color<<1334>>incolor<<1334>>\end<<1592>>tex2html_deferred<<1592>>[231]:\hspace<<1335>>3pt<<1335>>\kern\kvtcb@left@rule\kern\kvtcb@boxsep<<1333>><<1331>>\vspace<<1332>>-\baselineskip<<1332>>
+    
+\begin<<551>>tex2html_preform<<551>><tex2html_verbatim_mark>Verbatim92#\end<<552>>tex2html_preform<<552>>
+\end<<553>>tcolorbox<<553>>
+\begin<<1593>>tex2html_deferred<<1593>>\par\end<<1594>>tex2html_deferred<<1594>>
+\begin<<554>>tex2html_preform<<554>><tex2html_verbatim_mark>Verbatim93#\end<<555>>tex2html_preform<<555>>
+\begin<<1595>>tex2html_deferred<<1595>>\par\end<<1596>>tex2html_deferred<<1596>>
+\begin<<556>>center<<556>>
+    \adjustimage<<822>>max size=<<557>>0.9\linewidth<<557>><<558>>0.9\paperheight<<558>><<822>><<559>>Evaluation_Metrices_files/Evaluation_Metrices_7_1.png<<559>>
+    \end<<560>>center<<560>>
+    <<823>> \hspace*<<561>>\fill<<561>> \\ <<823>>
+\begin<<1597>>tex2html_deferred<<1597>>\par\end<<1598>>tex2html_deferred<<1598>>
+\begin<<562>>center<<562>>
+    \adjustimage<<824>>max size=<<563>>0.9\linewidth<<563>><<564>>0.9\paperheight<<564>><<824>><<565>>Evaluation_Metrices_files/Evaluation_Metrices_7_2.png<<565>>
+    \end<<566>>center<<566>>
+    <<825>> \hspace*<<567>>\fill<<567>> \\ <<825>>
+\begin<<1599>>tex2html_deferred<<1599>>\par\end<<1600>>tex2html_deferred<<1600>>
+\hypertarget<<568>>obeservations<<568>><<826>><tex2html_comment_mark>78
+\subsubsection<<569>>Obeservations<<569>>\label<<570>>obeservations<<570>><<826>>
+\begin<<1601>>tex2html_deferred<<1601>>\par\end<<1602>>tex2html_deferred<<1602>>
+\textbf<<571>>Which model is performing better?<<571>>
+\begin<<1603>>tex2html_deferred<<1603>>\par\end<<1604>>tex2html_deferred<<1604>>
+\texttt<<572>>LR-4<<572>> \& \texttt<<573>>LR-all<<573>> performs better than all other models
+in every metric. While \texttt<<574>>LR-4<<574>> as better \texttt<<575>>precision=0.75<<575>>
+and \texttt<<576>>recall=0.55<<576>> when compared to the \texttt<<577>>precision=0.71<<577>>
+and \texttt<<578>>recall=0.53<<578>> of \texttt<<579>>LR-all<<579>>.
+\begin<<1605>>tex2html_deferred<<1605>>\par\end<<1606>>tex2html_deferred<<1606>>
+Similarly, \texttt<<580>>LR-4<<580>> performs better when we consider
+\texttt<<581>>F1\_score<<581>> \& \texttt<<582>>MCC<<582>>. (We observe the sensitivity of the
+\texttt<<583>>F1\_score<<583>> to flipping the class labels in Appendix A.)
+\begin<<1607>>tex2html_deferred<<1607>>\par\end<<1608>>tex2html_deferred<<1608>>
+When we consider \texttt<<584>>AUROC<<584>>, \texttt<<585>>LR-all<<585>> performs better. This
+means averaging over the possible thresholds, \texttt<<586>>LR-all<<586>> performs
+better than \texttt<<587>>LR-4<<587>>. But for the theshold the models actually use
+to predict \texttt<<588>>LR-4<<588>> performs best. In ROC plot, \tikz\draw[red,fill=red] (0,0) circle (.5ex); is plotted on
+the coordinates \texttt<<589>>(fpr,\ tpr)<<589>> calculated from \texttt<<590>>LR-4<<590>>'s
+confusion matrix. It can be observed that this is closes to the
+\emph<<591>>ideal<<591>> model's ROC value (top-left corner) when compared with that
+of \texttt<<592>>LR-all<<592>> \tikz\draw[blue,fill=blue] (0,0) circle (.5ex);.
+\begin<<1609>>tex2html_deferred<<1609>>\par\end<<1610>>tex2html_deferred<<1610>>
+\textbf<<827>>Why DummyClassifier has a score = \texttt<<593>>0.68<<593>>?<<827>>
+\begin<<1611>>tex2html_deferred<<1611>>\par\end<<1612>>tex2html_deferred<<1612>>
+This conforms with out intial guess of \texttt<<828>>\textasciitilde<<594>><<594>>0.65<<828>> in
+section \texttt<<595>>5.0\ -\ checking\ for\ class\ imbalance<<595>>. The test set
+has \texttt<<596>>0.3\ x\ 768<<596>> samples. From the confusion matrix
+\texttt<<597>>DC-4<<597>> we see that \texttt<<598>>157<<598>> predictions were true, ie; we get
+a score of \texttt<<599>>157/(0.3\ x\ 768)\ =\ 0.68<<599>>. Hence, the score
+\texttt<<600>>0.68<<600>> is due to the inherent imbalance in the dataset and due to
+the fact that we are using \texttt<<601>>strategy=most\_frequent<<601>>. It can be
+observed that by setting the parameter \texttt<<602>>strategy=uniform<<602>> several
+the metrices change.
+\begin<<1613>>tex2html_deferred<<1613>>\par\end<<1614>>tex2html_deferred<<1614>>
+\textbf<<603>>Why does DummyClassifier for all feature sets output the same
+metrics?<<603>>
+\begin<<1615>>tex2html_deferred<<1615>>\par\end<<1616>>tex2html_deferred<<1616>>
+This is due to the fact that for a particular
+\texttt<<604>>train\_test\_split<<604>>, the values of \texttt<<605>>y\_labels<<605>> doesn't
+change. And since the DummyClassifier doesn't learn from training data,
+it is going to have the same evaluation scores. This also means we can
+use dummy classifier as a baseline.
+\begin<<1617>>tex2html_deferred<<1617>>\par\end<<1618>>tex2html_deferred<<1618>>
+\textbf<<606>>Precision Score for DummyClassifier is Undefined.<<606>>
+\begin<<1619>>tex2html_deferred<<1619>>\par\end<<1620>>tex2html_deferred<<1620>>
+\begin<<1351>>displaymath<<1351>>Precision Score = \frac<<607>>TP<<607>><<608>>TP+FP<<608>>\end<<1353>>displaymath<<1353>> and from the confusion matrix
+\texttt<<609>>DC-4<<609>> \begin<<1352>>displaymath<<1352>>FP=TP=0\end<<1354>>displaymath<<1354>>
+\begin<<1621>>tex2html_deferred<<1621>>\par\end<<1622>>tex2html_deferred<<1622>>
+Similarly, \texttt<<610>>recall\ =\ 0<<610>>.
+\begin<<1623>>tex2html_deferred<<1623>>\par\end<<1624>>tex2html_deferred<<1624>>
+Interestingly, from the \texttt<<611>>precision-recall\ curve<<611>> we get
+\texttt<<612>>average\_precision=0.32<<612>>, while the \texttt<<613>>precision=0<<613>> for the
+dummy classifier model. This is because, \texttt<<614>>average\_precision<<614>> is
+calculated over all possible thresholds. If this has to do something
+with \texttt<<615>>74/(0.3\ x\ 768)\ =\ 0.32<<615>>, has to be explored (where
+\texttt<<616>>74\ is\ FN<<616>> from the confusion matrix \texttt<<617>>DC-4<<617>>).
+\begin<<1625>>tex2html_deferred<<1625>>\par\end<<1626>>tex2html_deferred<<1626>>
+\hypertarget<<618>>misc-observations<<618>><<829>><tex2html_comment_mark>79
+\subsubsection<<619>>Misc Observations<<619>>\label<<620>>misc-observations<<620>><<829>>
+\begin<<1627>>tex2html_deferred<<1627>>\par\end<<1628>>tex2html_deferred<<1628>>
+\textbf<<830>>Why \texttt<<621>>4.3.b<<621>> curve goes under DC-4?<<830>>
+\begin<<1629>>tex2html_deferred<<1629>>\par\end<<1630>>tex2html_deferred<<1630>>
+\hypertarget<<622>>appendix-a<<622>><<831>><tex2html_comment_mark>80
+\subsubsection<<623>>Appendix A<<623>>\label<<624>>appendix-a<<624>><<831>>
+\begin<<1631>>tex2html_deferred<<1631>>\par\end<<1632>>tex2html_deferred<<1632>>
+\hypertarget<<625>>flipping-labels<<625>><<832>><tex2html_comment_mark>81
+\paragraph<<626>>Flipping labels<<626>>\label<<627>>flipping-labels<<627>><<832>>
+\begin<<1633>>tex2html_deferred<<1633>>\par\end<<1634>>tex2html_deferred<<1634>>
+It can be observed that every metrices except \texttt<<628>>MCC<<628>> and
+\texttt<<629>>AUROC<<629>> changes. \texttt<<630>>ROC<<630>> plot is mirrored along the line
+\texttt<<631>>y=1-x<<631>>, but \texttt<<632>>AUROC<<632>> remains unchanged
+\begin<<1635>>tex2html_deferred<<1635>>\par\end<<1636>>tex2html_deferred<<1636>>
+\begin<<633>>tcolorbox<<633>>[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+
+        \begin<<1637>>tex2html_deferred<<1637>>\ttfamily\end<<1638>>tex2html_deferred<<1638>>\llap<<1336>><<1338>>\begin<<1639>>tex2html_deferred<<1639>>\color<<1339>>incolor<<1339>>\end<<1640>>tex2html_deferred<<1640>>[230]:\hspace<<1340>>3pt<<1340>>\kern\kvtcb@left@rule\kern\kvtcb@boxsep<<1338>><<1336>>\vspace<<1337>>-\baselineskip<<1337>>
+    
+\begin<<638>>tex2html_preform<<638>><tex2html_verbatim_mark>Verbatim94#\end<<639>>tex2html_preform<<639>>
+\end<<640>>tcolorbox<<640>>
+\begin<<1641>>tex2html_deferred<<1641>>\par\end<<1642>>tex2html_deferred<<1642>>
+\begin<<641>>tex2html_preform<<641>><tex2html_verbatim_mark>Verbatim95#\end<<642>>tex2html_preform<<642>>
+\begin<<1643>>tex2html_deferred<<1643>>\par\end<<1644>>tex2html_deferred<<1644>>
+\begin<<643>>center<<643>>
+    \adjustimage<<833>>max size=<<644>>0.9\linewidth<<644>><<645>>0.9\paperheight<<645>><<833>><<646>>Evaluation_Metrices_files/Evaluation_Metrices_10_1.png<<646>>
+    \end<<647>>center<<647>>
+    <<834>> \hspace*<<648>>\fill<<648>> \\ <<834>>
+\begin<<1645>>tex2html_deferred<<1645>>\par\end<<1646>>tex2html_deferred<<1646>>
+\begin<<649>>center<<649>>
+    \adjustimage<<835>>max size=<<650>>0.9\linewidth<<650>><<651>>0.9\paperheight<<651>><<835>><<652>>Evaluation_Metrices_files/Evaluation_Metrices_10_2.png<<652>>
+    \end<<653>>center<<653>>
+    <<836>> \hspace*<<654>>\fill<<654>> \\ <<836>>
+\begin<<1647>>tex2html_deferred<<1647>>\par\end<<1648>>tex2html_deferred<<1648>>
+\hypertarget<<655>>appendix-b<<655>><<837>><tex2html_comment_mark>82
+\subsubsection<<656>>Appendix B<<656>>\label<<657>>appendix-b<<657>><<837>>
+\begin<<1649>>tex2html_deferred<<1649>>\par\end<<1650>>tex2html_deferred<<1650>>
+\hypertarget<<658>>utils.py<<658>><<838>><tex2html_comment_mark>83
+\paragraph<<659>>utils.py<<659>>\label<<660>>utils.py<<660>><<838>>
+\begin<<1651>>tex2html_deferred<<1651>>\par\end<<1652>>tex2html_deferred<<1652>>
+\begin<<661>>tcolorbox<<661>>[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+
+        \begin<<1653>>tex2html_deferred<<1653>>\ttfamily\end<<1654>>tex2html_deferred<<1654>>\llap<<1341>><<1343>>\begin<<1655>>tex2html_deferred<<1655>>\color<<1344>>incolor<<1344>>\end<<1656>>tex2html_deferred<<1656>>[ ]:\hspace<<1345>>3pt<<1345>>\kern\kvtcb@left@rule\kern\kvtcb@boxsep<<1343>><<1341>>\vspace<<1342>>-\baselineskip<<1342>>
+    
+\begin<<666>>tex2html_preform<<666>><tex2html_verbatim_mark>Verbatim96#\end<<667>>tex2html_preform<<667>>
+\end<<668>>tcolorbox<<668>>
+\begin<<1657>>tex2html_deferred<<1657>>\par\end<<1658>>tex2html_deferred<<1658>>
+\begin<<669>>tcolorbox<<669>>[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+
+        \begin<<1659>>tex2html_deferred<<1659>>\ttfamily\end<<1660>>tex2html_deferred<<1660>>\llap<<1346>><<1348>>\begin<<1661>>tex2html_deferred<<1661>>\color<<1349>>incolor<<1349>>\end<<1662>>tex2html_deferred<<1662>>[ ]:\hspace<<1350>>3pt<<1350>>\kern\kvtcb@left@rule\kern\kvtcb@boxsep<<1348>><<1346>>\vspace<<1347>>-\baselineskip<<1347>>
+    
+\begin<<674>>tex2html_preform<<674>><tex2html_verbatim_mark>Verbatim97#\end<<675>>tex2html_preform<<675>>
+\end<<676>>tcolorbox<<676>>
+\begin<<1663>>tex2html_deferred<<1663>>\par\end<<1664>>tex2html_deferred<<1664>>
+\end<<677>>document<<677>>

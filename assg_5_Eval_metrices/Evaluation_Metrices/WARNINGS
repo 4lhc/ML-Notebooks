@@ -1,0 +1,27 @@
+No implementation found for style `tikz'
+No implementation found for style `tcolorbox'
+No implementation found for style `parskip'
+No implementation found for style `iftex'
+No implementation found for style `mathpazo'
+No implementation found for style `fontspec'
+No implementation found for style `caption'
+No implementation found for style `adjustbox'
+No implementation found for style `geometry'
+No implementation found for style `upquote'
+No implementation found for style `ucs'
+No implementation found for style `fancyvrb'
+No implementation found for style `titling'
+No implementation found for style `booktabs'
+No implementation found for style `enumitem'
+No implementation found for style `ulem'
+No implementation found for style `mathrsfs'
+
+redefining command \TeX 
+
+redefining command \LaTeX 
+
+possible looping with new-command \PY 
+
+? brace missing for \sbox
+
+? brace missing for \includegraphics
